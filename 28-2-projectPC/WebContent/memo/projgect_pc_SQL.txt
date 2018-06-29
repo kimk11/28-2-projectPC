@@ -12,12 +12,15 @@ CREATE TABLE `pc_user` (
 	`user_id` VARCHAR(50) NOT NULL,
 	`user_pw` VARCHAR(50) NOT NULL,
 	`user_name` VARCHAR(50) NOT NULL,
-	`user_time` INT(10) NULL DEFAULT NULL,
+	`user_time` INT(10) NULL DEFAULT '0',
 	`user_date` VARCHAR(50) NOT NULL,
+	`user_point` INT(10) NULL DEFAULT NULL,
+	`seat_no` INT(10) NULL DEFAULT NULL,
 	PRIMARY KEY (`user_id`)
 )
-COLLATE='euckr_Korean_ci'
+COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB;
+
 
 
 //goods table
