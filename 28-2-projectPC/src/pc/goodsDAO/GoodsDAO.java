@@ -1,5 +1,4 @@
 /*2018.06.29 º€¿Ø∫Û*/
-
 package pc.goodsDAO;
 
 import pc.DTO.GoodsDTO;
@@ -16,10 +15,11 @@ public class GoodsDAO {
 		Driver db = new Driver();
 		connection = db.driverConnection();
 		System.out.println("connection : " + connection);
-		preparedstatement = connection.prepareStatement("INSERT INTO pc_goods(goods_name,goods_price,goods_cate,goods_date) VALUES(?,?,?,now())");
-		preparedstatement.setString(1, goods.getGoodsName());
-		preparedstatement.setInt(2, goods.getGoodsPrice());
-		preparedstatement.setString(3, goods.getGoodsCate());
+		preparedstatement = connection.prepareStatement("INSERT INTO pc_goods(goods_code,goods_name,goods_price,goods_cate,goods_date) VALUES(?,?,?,?,now())");
+		preparedstatement.setInt(1, goods.getGoodsCode());
+		preparedstatement.setString(2, goods.getGoodsName());
+		preparedstatement.setInt(3, goods.getGoodsPrice());
+		preparedstatement.setString(4, goods.getGoodsCate());
 		preparedstatement.executeUpdate();
 
 		preparedstatement.close();

@@ -25,12 +25,13 @@ ENGINE=InnoDB;
 
 //goods table
 
+
 CREATE TABLE `pc_goods` (
 	`goods_code` INT(10) NOT NULL,
 	`goods_name` VARCHAR(50) NOT NULL,
 	`goods_price` INT(10) NOT NULL,
 	`goods_cate` VARCHAR(50) NOT NULL,
-	`goods_date` DATE NOT NULL,
+	`goods_date` VARCHAR(50) NOT NULL,
 	PRIMARY KEY (`goods_code`)
 )
 COLLATE='euckr_korean_ci'
