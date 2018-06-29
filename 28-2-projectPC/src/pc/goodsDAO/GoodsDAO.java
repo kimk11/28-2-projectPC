@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class GoodsDAO {
 	Connection connection = null;
-	PreparedStatement pstmt = null;
+	PreparedStatement preparedstatement = null;
 
 	// 01 상품 입고 insertGoods
 	public void insertGoods(GoodsDTO goods) throws ClassNotFoundException, SQLException {
@@ -14,12 +14,12 @@ public class GoodsDAO {
 		Driver db = new Driver();
 		connection = db.driverConnection();
 		System.out.println("connection : " + connection);
-		pstmt = connection.prepareStatement("INSERT INTO pc_goods(goods_name,goods_price) VALUES(?,?)");
-		pstmt.setString(2, goods.getGoods_name());
-		pstmt.setInt(3, goods.getGoods_price());
-		pstmt.executeUpdate();
+		preparedstatement = connection.prepareStatement("INSERT INTO pc_goods(goods_name,goods_price) VALUES(?,?)");
+		preparedstatement.setString(2, goods.getGoodsName());
+		preparedstatement.setInt(3, goods.getGoodsPrice());
+		preparedstatement.executeUpdate();
 
-		pstmt.close();
+		preparedstatement.close();
 		connection.close();
 	}
 
