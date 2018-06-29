@@ -1,0 +1,57 @@
+//db생성
+
+create database pcdb;
+
+//계정 생성 및 권한 부여
+
+grant select,insert,update,delete,create,drop,alter on pcdb.* to 'pcid'@'localhost' identified by 'pcpw';
+
+//user table
+
+CREATE TABLE `pc_user` (
+	`user_id` VARCHAR(50) NOT NULL,
+	`user_pw` VARCHAR(50) NOT NULL,
+	`user_name` VARCHAR(50) NOT NULL,
+	`user_time` INT(10) NULL DEFAULT NULL,
+	`user_date` VARCHAR(50) NOT NULL,
+	PRIMARY KEY (`user_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB;
+
+
+//goods table
+
+CREATE TABLE `pc_goods` (
+	`goods_code` INT(10) NOT NULL,
+	`goods_name` VARCHAR(50) NOT NULL,
+	`goods_price` INT(10) NOT NULL,
+	PRIMARY KEY (`goods_code`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB;
+
+
+//pay table
+
+CREATE TABLE `pc_payment` (
+	`payment_no` INT(10) NOT NULL,
+	`payment_name` VARCHAR(50) NOT NULL,
+	`payment_time` INT(10) NOT NULL,
+	PRIMARY KEY (`payment_no`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB;
+
+
+//seat table
+
+CREATE TABLE `pc_seat` (
+	`seat_no` INT(10) NOT NULL,
+	`user_id` VARCHAR(50) NULL DEFAULT NULL,
+	`user_name` VARCHAR(50) NULL DEFAULT NULL,
+	`user_time` VARCHAR(50) NULL DEFAULT NULL,
+	PRIMARY KEY (`seat_no`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB;

@@ -1,0 +1,27 @@
+작성 분담
+
+현희문
+user insert 
+-form
+-action
+-dto
+-dao
+
+김진우
+pay insert
+-form
+-action
+-dto
+-dao
+
+seat insert
+-action
+-dto
+-dao
+
+송유빈
+goods insert
+-form
+-action
+-dto
+-dao
