@@ -16,7 +16,7 @@ CREATE TABLE `pc_user` (
 	`user_date` VARCHAR(50) NOT NULL,
 	PRIMARY KEY (`user_id`)
 )
-COLLATE='latin1_swedish_ci'
+COLLATE='euckr_Korean_ci'
 ENGINE=InnoDB;
 
 
@@ -28,7 +28,7 @@ CREATE TABLE `pc_goods` (
 	`goods_price` INT(10) NOT NULL,
 	PRIMARY KEY (`goods_code`)
 )
-COLLATE='latin1_swedish_ci'
+COLLATE='euckr_Korean_ci'
 ENGINE=InnoDB;
 
 
@@ -40,7 +40,7 @@ CREATE TABLE `pc_payment` (
 	`payment_time` INT(10) NOT NULL,
 	PRIMARY KEY (`payment_no`)
 )
-COLLATE='latin1_swedish_ci'
+COLLATE='euckr_Korean_ci'
 ENGINE=InnoDB;
 
 
@@ -53,5 +53,5 @@ CREATE TABLE `pc_seat` (
 	`user_time` VARCHAR(50) NULL DEFAULT NULL,
 	PRIMARY KEY (`seat_no`)
 )
-COLLATE='latin1_swedish_ci'
+COLLATE='euckr_Korean_ci'
 ENGINE=InnoDB;
