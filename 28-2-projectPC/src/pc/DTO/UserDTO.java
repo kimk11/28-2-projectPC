@@ -4,7 +4,6 @@ public class UserDTO {
 	private String userId;
 	private String userPw;
 	private String userName;
-	private String userTime;
 	private String userDate;
 	
 	public String getUserId() {
@@ -24,12 +23,6 @@ public class UserDTO {
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-	public String getUserTime() {
-		return userTime;
-	}
-	public void setUserTime(String userTime) {
-		this.userTime = userTime;
 	}
 	public String getUserDate() {
 		return userDate;

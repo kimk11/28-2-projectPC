@@ -6,8 +6,8 @@
 		<title>userInsertForm</title>
 	</head>
 	<body>
-		<form action = "<%=request.getContextPath()%>/user/userInsertAction.jsp" method = "post">
 		<h1>PC방 회원가입</h1>
+		<form action = "<%=request.getContextPath()%>/user/userInsertAction.jsp" method = "post">
 			<table>
 				<tr>
 					<td>아이디</td>
@@ -15,14 +15,14 @@
 				</tr>
 				<tr>
 					<td>비밀번호</td>
-					<td><input type = "text" name = userPw></td>
+					<td><input type = "password" name = userPw></td>
 				</tr>
 				<tr>
 					<td>이름</td>
 					<td><input type = "text" name = userName></td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="회원가입"></td>
+					<td><input type = "submit" value="회원가입"></td>
 				</tr>
 			</table>
 		</form>
