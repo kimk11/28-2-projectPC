@@ -18,7 +18,7 @@ CREATE TABLE `pc_user` (
 	`seat_no` INT(10) NULL DEFAULT NULL,
 	PRIMARY KEY (`user_id`)
 )
-COLLATE='latin1_swedish_ci'
+COLLATE='euckr_korean_ci'
 ENGINE=InnoDB;
 
 
