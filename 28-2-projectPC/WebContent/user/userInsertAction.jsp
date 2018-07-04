@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 
 <% request.setCharacterEncoding("euc-kr"); %>
-<jsp:useBean id="userdto" class="pc.DTO.UserDTO"/>
-<jsp:setProperty name="userdto" property="*"/>
+<jsp:useBean id="userDto" class="pc.DTO.UserDTO"/>
+<jsp:setProperty name="userDto" property="*"/>
 
 <%
 UserDAO userdao = new UserDAO();
-userdao.userInsert(userdto);
+userdao.userInsert(userDto);
 %>

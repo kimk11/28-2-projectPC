@@ -20,7 +20,7 @@
 	<%
 		UserDAO userDao = new UserDAO();
 		
-		int rowNumber = userDao.countUser();
+		int rowNumber = userDao.userCount();
 		
 		int currentPage = 1;
 		if (request.getParameter("currentPage") != null) {

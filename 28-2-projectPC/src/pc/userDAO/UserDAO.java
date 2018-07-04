@@ -100,10 +100,76 @@ public class UserDAO {
 		result = preparedstatement.executeQuery();
 		
 		if(result.next()) {
-			
+			userDto.setUserId(result.getString("user_id"));
+			userDto.setUserPw(result.getString("user_pw"));
+			userDto.setUserLevel(result.getString("user_level"));
+			userDto.setUserName(result.getString("user_name"));
+			userDto.setUserTime(result.getInt("user_time"));
+			userDto.setUserDate(result.getString("user_date"));
+			userDto.setUserPoint(result.getInt("user_point"));
+			userDto.setSeatNo(result.getInt("seat_no"));
 		}
 		
-		return null;
+		result.close();
+		preparedstatement.close();
+		connection.close();
 		
+		return userDto;
+	}
+	
+	public UserDTO userSelectForm(String userId) throws ClassNotFoundException, SQLException {
+		System.out.println("04_userSelectDetail UserDAO.java");
+		
+		UserDTO userDto = new UserDTO();
+		
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		System.out.println(connection + "<-- connection");
+		
+		preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
+		preparedstatement.setString(1, userId);
+		
+		result = preparedstatement.executeQuery();
+		
+		if(result.next()) {
+			userDto.setUserId(result.getString("user_id"));
+			userDto.setUserPw(result.getString("user_pw"));
+			userDto.setUserLevel(result.getString("user_level"));
+			userDto.setUserName(result.getString("user_name"));
+			userDto.setUserTime(result.getInt("user_time"));
+			userDto.setUserDate(result.getString("user_date"));
+			userDto.setUserPoint(result.getInt("user_point"));
+			userDto.setSeatNo(result.getInt("seat_no"));
+		}
+		
+		result.close();
+		preparedstatement.close();
+		connection.close();
+		
+		return userDto;
+	}
+	
+	public void userUpdate(UserDTO userDto) throws ClassNotFoundException, SQLException {
+		System.out.println("05_userUpdate UserDAO.java");
+		
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		System.out.println(connection + "<-- connection");
+		
+		preparedstatement = connection.prepareStatement("UPDATE pc_user SET user_id = ?, user_pw = ?, user_level = ?, user_name = ?, user_time = ?, user_date = ?, user_point = ?, seat_no = ? WHERE user_id = ?");
+		preparedstatement.setString(1, userDto.getUserId());
+		preparedstatement.setString(2, userDto.getUserPw());
+		preparedstatement.setString(3, userDto.getUserLevel());
+		preparedstatement.setString(4, userDto.getUserName());
+		preparedstatement.setInt(5, userDto.getUserTime());
+		preparedstatement.setString(6, userDto.getUserDate());
+		preparedstatement.setInt(7, userDto.getUserPoint());
+		preparedstatement.setInt(8, userDto.getSeatNo());
+		preparedstatement.setString(9, userDto.getUserId());
+		
+		preparedstatement.executeUpdate();
+		
+		preparedstatement.close();
+		connection.close();
 	}
 }

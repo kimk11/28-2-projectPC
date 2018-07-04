@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page import = "pc.userDAO.UserDAO" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,6 +7,15 @@
 		<title>userUpdateAction</title>
 	</head>
 	<body>
+		<% request.setCharacterEncoding("euc-kr"); %>
+		<jsp:useBean id="userDto" class="pc.DTO.UserDTO"/>
+		<jsp:setProperty name="userDto" property="*"/>
 		
+		<%
+			UserDAO userDao = new UserDAO();
+			userDao.userUpdate(userDto);
+			
+			response.sendRedirect(request.getContextPath() + "/user/userList.jsp");
+		%>
 	</body>
 </html>
