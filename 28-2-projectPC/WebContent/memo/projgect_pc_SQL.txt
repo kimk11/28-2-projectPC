@@ -11,15 +11,17 @@ grant select,insert,update,delete,create,drop,alter on pcdb.* to 'pcid'@'localho
 CREATE TABLE `pc_user` (
 	`user_id` VARCHAR(50) NOT NULL,
 	`user_pw` VARCHAR(50) NOT NULL,
+	`user_level` VARCHAR(50) NOT NULL DEFAULT '일반회원',
 	`user_name` VARCHAR(50) NOT NULL,
-	`user_time` INT(10) NULL DEFAULT '0',
+	`user_time` INT(10) NOT NULL DEFAULT '0',
 	`user_date` VARCHAR(50) NOT NULL,
 	`user_point` INT(10) NOT NULL DEFAULT '0',
-	`seat_no` INT(10) NULL DEFAULT NULL,
+	`seat_no` INT(10) NOT NULL DEFAULT '0',
 	PRIMARY KEY (`user_id`)
 )
 COLLATE='euckr_korean_ci'
 ENGINE=InnoDB;
+
 
 
 
