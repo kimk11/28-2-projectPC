@@ -69,7 +69,7 @@ public class SeatDAO {
 		
 		String sql = "select user_pw from pc_user where user_id = ?";
 		preparedstatement = connection.prepareStatement(sql);
-		preparedstatement.setString(1, userDto.getUserPw());
+		preparedstatement.setString(1, userDto.getUserId());
 		resultset = preparedstatement.executeQuery();
 		if(resultset.next()) {
 			if(resultset.getString(1).equals(userDto.getUserPw())) {
@@ -96,7 +96,6 @@ public class SeatDAO {
 	public UserDTO seatLoginSession(UserDTO userDto) throws ClassNotFoundException, SQLException {
 		Driver driver = new Driver();
 		connection = driver.driverConnection();
-
 		
 		String sql = "SELECT user_id,user_pw,user_level,user_name,user_time,user_date,user_point,seat_no FROM pc_user WHERE user_id=? AND user_pw=?";
 		preparedstatement = connection.prepareStatement(sql);
@@ -111,6 +110,10 @@ public class SeatDAO {
 			userDto.setUserPoint(resultset.getInt(7));
 			userDto.setSeatNo(resultset.getInt(8));
 		}
+		
+		resultset.close();
+		preparedstatement.close();
+		connection.close();
 		
 		return userDto;
 	}

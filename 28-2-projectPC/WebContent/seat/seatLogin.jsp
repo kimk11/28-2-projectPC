@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page import="pc.DTO.UserDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +11,10 @@
 </head>
 <body>
 <%
-	String sessionId = (String)session.getAttribute("sessionId");
-	
-	if(session.getAttribute("sessionId") == null){
+	String userId = (String)session.getAttribute("sessionId");
+	String userName = (String)session.getAttribute("sessionName");
+
+	if(userId == null){
 		//세션이 없을경우, 즉 로그인을 안햇을 경우
 		//로그인 폼 화면
 		//세션이 있을경우, 즉 로그인을 했을 경우
@@ -27,7 +29,7 @@
 		        </div>
 		        <div class="content">
 		            <div class="signin-cont cont">
-		                <form action="#" method="post" enctype="multipart/form-data">
+		                <form action="<%= request.getContextPath() %>/seat/seatLoginAction.jsp" method="post">
 		                    <input type="text" name="userId" id="email" class="inpt" required="required" placeholder="아이디">
 		               
 		                    <input type="password" name="userPw" id="password" class="inpt" required="required" placeholder="비밀번호">
@@ -48,7 +50,10 @@
 <%	
 	}else{
 %>
-		
+<!-- 	include로 로그인 후 화면  -->
+	<jsp:include page="../browser/loginBorwser.jsp"/>
+	
+	<a href="<%= request.getContextPath() %>/seat/seatLogout.jsp">로그아웃</a>
 <%	
 	}
 %>
