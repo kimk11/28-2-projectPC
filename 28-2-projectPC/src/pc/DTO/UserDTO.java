@@ -5,10 +5,10 @@ public class UserDTO {
 	private String userPw;
 	private String userLevel;
 	private String userName;
-	private String userTime;
+	private int userTime;
 	private String userDate;
-	private String userPoint;
-	private String seatNo;
+	private int userPoint;
+	private int seatNo;
 	
 	public String getUserId() {
 		return userId;
@@ -34,10 +34,10 @@ public class UserDTO {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getUserTime() {
+	public int getUserTime() {
 		return userTime;
 	}
-	public void setUserTime(String userTime) {
+	public void setUserTime(int userTime) {
 		this.userTime = userTime;
 	}
 	public String getUserDate() {
@@ -46,16 +46,16 @@ public class UserDTO {
 	public void setUserDate(String userDate) {
 		this.userDate = userDate;
 	}
-	public String getUserPoint() {
+	public int getUserPoint() {
 		return userPoint;
 	}
-	public void setUserPoint(String userPoint) {
+	public void setUserPoint(int userPoint) {
 		this.userPoint = userPoint;
 	}
-	public String getSeatNo() {
+	public int getSeatNo() {
 		return seatNo;
 	}
-	public void setSeatNo(String seatNo) {
+	public void setSeatNo(int seatNo) {
 		this.seatNo = seatNo;
 	}
 }
