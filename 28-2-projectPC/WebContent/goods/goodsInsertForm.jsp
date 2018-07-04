@@ -11,7 +11,8 @@
 	<h2>상품 등록</h2>
 	<form action="./goodsInsertAction.jsp" method ="post">
 		<div>
-			<input type="hidden" name="goodsCode"><br>
+			<label> 상품코드 : </label>
+			<input type="text" name="goodsCode"><br>
 			<label> 상품명 : </label>
 			<input type="text" name="goodsName"><br>
 			<label> 가　격 : </label>
