@@ -51,7 +51,9 @@
 	}else{
 %>
 <!-- 	include로 로그인 후 화면  -->
-	<jsp:include page="../browser/loginBorwser.jsp"/>
+	<jsp:include page="../browser/loginBorwser.jsp">
+		<jsp:param name="userId" value="<%=userId%>"/>
+	</jsp:include>
 	
 	<a href="<%= request.getContextPath() %>/seat/seatLogout.jsp">로그아웃</a>
 <%	

@@ -11,13 +11,21 @@
 </head>
 <body>
 	<div id="wrapper">
-		<div id="topright"></div>
+	
+		<div id="topright">
+<!-- 		회원정보 -->
+		</div>
+		
 		<div id="orderbtn">
+<!-- 		주문 버튼 -->
 			<div class="bluelight">
 				<a href="#">주문하기</a>
 			</div>
 		</div>
-		<div id="orderlist"></div>
+		
+		<div id="orderlist">
+<!-- 		주문 목록 -->
+		</div>
 	</div>
 </body>
 </html>
