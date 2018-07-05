@@ -14,6 +14,27 @@ public class UserDAO {
 	PreparedStatement preparedstatement = null;
 	ResultSet result = null;
 	
+	//중복된 아이디 검색 - 0이면 없음 , 1이면 중복된 아이디 있음.
+	public int userIdCheck(UserDTO userdto) throws ClassNotFoundException, SQLException {
+		int check = 0;
+		
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		
+		preparedstatement = connection.prepareStatement("select user_id from pc_user where user_id=?");
+		preparedstatement.setString(1, userdto.getUserId());
+		result = preparedstatement.executeQuery();
+		if(result.next()) {
+			check=1;
+		}
+		
+		result.close();
+		preparedstatement.close();
+		connection.close();
+		
+		return check;
+	}
+	
 	public void userInsert(UserDTO userdto) throws ClassNotFoundException, SQLException {
 		System.out.println("01_uInsert UserDAO.java");
 		

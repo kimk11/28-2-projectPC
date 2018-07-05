@@ -9,7 +9,22 @@
 
 <%
 UserDAO userdao = new UserDAO();
-userdao.userInsert(userDto);
 
-response.sendRedirect(request.getContextPath() + "/user/userList.jsp");
+int check = userdao.userIdCheck(userDto);
+if(check==0){
+	userdao.userInsert(userDto);
+	response.sendRedirect(request.getContextPath() + "/user/userList.jsp");
+}else{
+%>
+	<script type="text/javascript">
+		alert('아이디가 중복됩니다.');
+		history.go(-1);
+	</script>
+<%
+}
+
+
+
+
+
 %>
