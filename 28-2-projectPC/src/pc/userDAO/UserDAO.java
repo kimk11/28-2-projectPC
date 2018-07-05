@@ -233,4 +233,21 @@ public class UserDAO {
 		
 		return list;
 	}
+	
+	//user time 시간으로 바꾸기
+	public String userGetTime(UserDTO userDto) {
+		String userTime = "";
+		
+		int time = userDto.getUserTime();
+		
+		if(time%60==0) {
+			userTime = time/60+"시간";
+		}else if(time<60) {
+			userTime = time%60+"분";
+		}else if(time>60) {
+			userTime = time/60+"시간 "+time%60+"분";
+		}
+		
+		return userTime ; 
+	}
 }

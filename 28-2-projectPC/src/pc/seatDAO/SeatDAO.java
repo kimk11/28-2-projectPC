@@ -118,4 +118,51 @@ public class SeatDAO {
 		return userDto;
 	}
 // <좌석 로그인 메서드 end>
+
+// <좌석 리스트 정보 start>
+	//좌석을 사용하는지 안하는지 확인 - 0이면 사용하는 사람 없음, 1이면 사용하는 사람 있음
+	public int seatCheck(int seatNo) throws ClassNotFoundException, SQLException {
+		int check = 0;
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		
+		String sql = "SELECT user_id FROM pc_user WHERE seat_no=?";
+		preparedstatement = connection.prepareStatement(sql);
+		preparedstatement.setInt(1, seatNo);
+		resultset = preparedstatement.executeQuery();
+		if(resultset.next()) {
+			check = 1;
+		}
+		
+		resultset.close();
+		preparedstatement.close();
+		connection.close();
+		
+		return check;
+	}
+	
+	//user DB에서 정보 가져오기 메서드
+	public UserDTO seatSelectUserInfo(int seatNo) throws ClassNotFoundException, SQLException {
+		UserDTO userDto = new UserDTO();
+		
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		
+		String sql = "SELECT user_id,user_name,user_time FROM pc_user WHERE seat_no=?";
+		preparedstatement = connection.prepareStatement(sql);
+		preparedstatement.setInt(1, seatNo);
+		resultset = preparedstatement.executeQuery();
+		if(resultset.next()) {
+			userDto.setUserId(resultset.getString(1));
+			userDto.setUserName(resultset.getString(2));
+			userDto.setUserTime(resultset.getInt(3));
+		}
+		
+		resultset.close();
+		preparedstatement.close();
+		connection.close();
+		
+		return userDto;
+	}
+// <좌석 리스트 정보 end>
 }
