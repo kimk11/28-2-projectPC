@@ -22,7 +22,7 @@ GoodsDTO goodsDto = goodsDao.SelectforUpdate(code);
 	<h2>상품 수정</h2>
 	<form action="./goodsUpdateAction.jsp" method="post">
 		<label>상품코드 :</label>
-		<span><%=code %></span><br>
+		<input type="text" value="<%=code%>" name="goodsCode"> <br>
 		<label>상 품 명 :</label>
 		<input type="text" value="<%= goodsDto.getGoodsName() %>" name="goodsName"><br>
 		<label>가　　격 :</label>

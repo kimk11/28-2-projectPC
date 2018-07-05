@@ -16,11 +16,10 @@
 </head>
 <body>
 <%
-	
 	GoodsDAO goodsDao = new GoodsDAO();
 	goodsDao.updateGoods(g);
 
-	response.sendRedirect(request.getContextPath()+"/goods/goodsList.jsp");
+	response.sendRedirect(request.getContextPath()+"/goods/goodsSearchList.jsp");
 %>
 </body>
 </html>

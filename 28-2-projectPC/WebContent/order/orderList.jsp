@@ -3,9 +3,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>주문 내역 리스트</title>
 </head>
 <body>
-
+	
 </body>
 </html>
