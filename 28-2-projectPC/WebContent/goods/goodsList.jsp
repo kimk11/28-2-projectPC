@@ -1,8 +1,10 @@
+<!-- 2018.07.04 송유빈 -->
+<!-- goodsList.jsp -->
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ page import="pc.goodsDAO.GoodsDAO" %>
 <%@ page import="pc.DTO.GoodsDTO" %>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import ="java.sql.*" %>
+<%@page import="java.util.ArrayList"%>
 <% request.setCharacterEncoding("euc-kr"); %>
 <!DOCTYPE html>
 <jsp:useBean id="g" class="pc.DTO.GoodsDTO"></jsp:useBean> 
@@ -12,7 +14,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>상품 조회 리스트</title>
 <style>
 	table, tr, td, th{
 		border : solid 1px #cccccc;
@@ -21,35 +23,28 @@
 </style>
 </head>
 <body>
-
 <%
+
 	/* 페이징 작업 */
 	int currentPage = 1; //현재페이지
 	int pagePerRow = 5; //한 페이지에 나올 row 수
 	if (request.getParameter("currentPage") != null) {
 		currentPage = Integer.parseInt(request.getParameter("currentPage"));
 	}
-	String sk = request.getParameter("sk");
-	String sv = request.getParameter("sv");
-	String all = request.getParameter("all");				//전체리스트
-	String goods1 = request.getParameter("goods1");			//과자
-	String goods2 = request.getParameter("goods2");			//음료
-	String goods3 = request.getParameter("goods3");			//간식
-	String goods4 = request.getParameter("goods4");			//식품
+	
 	
 	int startRow = (currentPage - 1) * pagePerRow;
 	int endRow = startRow + (pagePerRow - 1);
 	
 	GoodsDAO goodsDao = new GoodsDAO();
-	ArrayList<GoodsDTO> arGoodsList = goodsDao.selectGoods(startRow, pagePerRow, sk, sv);
-	int totalRow = goodsDao.goods1Count(sk,sv);
+	ArrayList<GoodsDTO> arGoodsList = goodsDao.selectGoods(startRow, pagePerRow);
+	int totalRow = goodsDao.goodsCount();
 	if (endRow	> arGoodsList.size()-1) {
 		endRow = arGoodsList.size()-1;
 	}
 %>
 	<!-- 상품 리스트 테이블 -->
 	<h2>상품 조회 리스트</h2>
-	<%@ include file = "./goodsSearchForm.jsp" %> <br>
 	<table>
 		<tr>
 			<th>상품코드</th>
@@ -82,19 +77,22 @@
 	<%
 		if (currentPage > 1) {
 	%>
-	<a href="./goodsSearchList.jsp?currentPage=<%=currentPage - 1%>&sk=<%= sk %>&sv=<%= sv %>">이전</a>
+	<a href="./goodsList.jsp?currentPage=<%=currentPage - 1%>">이전</a>
 	<%
 		}
+
 	int lastPage = (totalRow-1) / pagePerRow;
 	if ((totalRow-1) % pagePerRow != 0) {
 		lastPage++;
 	}
 		if (currentPage < lastPage) {
 	%>
-	<a href="./goodsSearchList.jsp?currentPage=<%=currentPage + 1%>&sk=<%= sk %>&sv=<%= sv %>">다음</a>
+	<a href="./goodsList.jsp?currentPage=<%=currentPage + 1%>">다음</a>
 	<%
 		}
 
 	%>
+	
+	
 </body>
 </html>
