@@ -14,27 +14,7 @@ public class UserDAO {
 	PreparedStatement preparedstatement = null;
 	ResultSet result = null;
 	
-	//중복된 아이디 검색 - 0이면 없음 , 1이면 중복된 아이디 있음.
-	public int userIdCheck(UserDTO userdto) throws ClassNotFoundException, SQLException {
-		int check = 0;
-		
-		Driver driver = new Driver();
-		connection = driver.driverConnection();
-		
-		preparedstatement = connection.prepareStatement("select user_id from pc_user where user_id=?");
-		preparedstatement.setString(1, userdto.getUserId());
-		result = preparedstatement.executeQuery();
-		if(result.next()) {
-			check=1;
-		}
-		
-		result.close();
-		preparedstatement.close();
-		connection.close();
-		
-		return check;
-	}
-	
+	//회원가입 후 pc_user 테이블에 입력하는 메서드
 	public void userInsert(UserDTO userdto) throws ClassNotFoundException, SQLException {
 		System.out.println("01_uInsert UserDAO.java");
 		
@@ -53,6 +33,7 @@ public class UserDAO {
 		connection.close();
 	}
 	
+	//모든 회원정보를 조회하는 메서드
 	public ArrayList<UserDTO> userSelectByPage(int begin, int rowPerPage) throws ClassNotFoundException, SQLException {
 		System.out.println("02_01_userSelectByPage UserDAO.java");
 		
@@ -82,6 +63,7 @@ public class UserDAO {
 		return list;
 	}
 	
+	//pc_user 테이블에 회원정보의 총 행의 갯수를 알려주는 메서드
 	public int userCount() throws ClassNotFoundException, SQLException {
 		System.out.println("02_02_userCount UserDAO.java");
 
@@ -106,6 +88,7 @@ public class UserDAO {
 		return rowNumber;
 	}
 	
+	//회원의 상세정보를 알려주는 메서드
 	public UserDTO userSelectDetail(String userId) throws ClassNotFoundException, SQLException {
 		System.out.println("03_userSelectDetail UserDAO.java");
 		
@@ -138,6 +121,7 @@ public class UserDAO {
 		return userDto;
 	}
 	
+	//회원정보 수정 폼에서 원래의 회원정보를 가져오는 메서드
 	public UserDTO userSelectForm(String userId) throws ClassNotFoundException, SQLException {
 		System.out.println("04_userSelectDetail UserDAO.java");
 		
@@ -170,6 +154,7 @@ public class UserDAO {
 		return userDto;
 	}
 	
+	//회원정보를 수정하는 메서드
 	public void userUpdate(UserDTO userDto) throws ClassNotFoundException, SQLException {
 		System.out.println("05_userUpdate UserDAO.java");
 		
@@ -194,6 +179,7 @@ public class UserDAO {
 		connection.close();
 	}
 	
+	//회원정보를 삭제하는 메서드
 	public void userDelete(String userId) throws ClassNotFoundException, SQLException {
 		System.out.println("06_userDelete UserDAO.java");
 		
@@ -212,7 +198,8 @@ public class UserDAO {
 		connection.close();
 	}
 	
-	public ArrayList<UserDTO> userSelectSearch(String searchKey, String searchValue, UserDTO userDto) throws ClassNotFoundException, SQLException{
+	//회원정보를 검색하는 메서드
+	public ArrayList<UserDTO> userSelectSearch(String searchKey, String searchValue) throws ClassNotFoundException, SQLException{
 		System.out.println("07_userSelectSearch UserDAO.java");
 		
 		ArrayList<UserDTO> list = new ArrayList<>();
@@ -226,26 +213,28 @@ public class UserDAO {
 		}else if(searchKey != null & searchValue.equals("")){
 			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user;");
 		}else if(searchKey != null & searchValue != null){
-			if(searchKey.equals(userDto.getUserId())){
+			if(searchKey.equals("userId")){
 				preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
 				preparedstatement.setString(1, searchValue);
-			}else if(searchKey.equals(userDto.getUserName())){
+			}else if(searchKey.equals("userName")){
 				preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
 				preparedstatement.setString(1, searchValue);
 			}
 		}
 		
+		result = preparedstatement.executeQuery();
+		
 		while(result.next()) {
-			UserDTO userDTO = new UserDTO();
-			userDTO.setUserId(result.getString("user_id"));
-			userDTO.setUserPw(result.getString("user_pw"));
-			userDTO.setUserLevel(result.getString("user_level"));
-			userDTO.setUserName(result.getString("user_name"));
-			userDTO.setUserTime(result.getInt("user_time"));
-			userDTO.setUserDate(result.getString("user_date"));
-			userDTO.setUserPoint(result.getInt("user_point"));
-			userDTO.setSeatNo(result.getInt("seat_no"));
-			list.add(userDTO);
+			UserDTO userDto = new UserDTO();
+			userDto.setUserId(result.getString("user_id"));
+			userDto.setUserPw(result.getString("user_pw"));
+			userDto.setUserLevel(result.getString("user_level"));
+			userDto.setUserName(result.getString("user_name"));
+			userDto.setUserTime(result.getInt("user_time"));
+			userDto.setUserDate(result.getString("user_date"));
+			userDto.setUserPoint(result.getInt("user_point"));
+			userDto.setSeatNo(result.getInt("seat_no"));
+			list.add(userDto);
 		}
 		
 		result.close();
@@ -255,7 +244,7 @@ public class UserDAO {
 		return list;
 	}
 	
-	//user time 시간으로 바꾸기
+	//userTime을 시간으로 바꾸는 메서드
 	public String userGetTime(UserDTO userDto) {
 		String userTime = "";
 		

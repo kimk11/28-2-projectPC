@@ -26,16 +26,9 @@
 		String searchKey = request.getParameter("searchKey");
 		String searchValue = request.getParameter("searchValue");
 		
-		UserDTO userDto = new UserDTO();
-		
-		if(searchKey.equals("userId")){
-			userDto.setUserId(searchValue);
-		}else{
-			userDto.setUserName(searchValue);
-		}
 			
 		UserDAO userDao = new UserDAO();
-		ArrayList<UserDTO> list = userDao.userSelectSearch(searchKey, searchValue, userDto);
+		ArrayList<UserDTO> list = userDao.userSelectSearch(searchKey, searchValue);
 		
 		for(int i = 0; i < list.size(); i++){
 			UserDTO userDTO = list.get(i);
