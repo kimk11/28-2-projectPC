@@ -35,11 +35,11 @@
 					<td><%=userDto.getUserName()%></td>
 				</tr>
 				<tr>
-					<td>잔여시간</td>
+					<td>잔여사용시간</td>
 					<td><%=userDto.getUserTime()%></td>
 				</tr>
 				<tr>
-					<td>가입날짜</td>
+					<td>회원가입날짜</td>
 					<td><%=userDto.getUserDate()%></td>
 				</tr>
 				<tr>

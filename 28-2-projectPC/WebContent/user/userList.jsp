@@ -39,13 +39,13 @@
 		System.out.println(list + "<-- list");
 		
 		for(int i=0;i<list.size();i++){
-			UserDTO user = list.get(i);
+			UserDTO userDto = list.get(i);
 	%>
 			<tr>
-				<td><a href = "<%= request.getContextPath() %>/user/userDetail.jsp?userId=<%=user.getUserId()%>"><%=user.getUserId()%></a></td>
-				<td><%=user.getUserName()%></td>		
-				<td><a href = "<%= request.getContextPath() %>/user/userUpdateForm.jsp?userId=<%=user.getUserId()%>">수정</a></td>
-				<td><a href = "<%= request.getContextPath() %>/user/userDeleteAction.jsp?userId=<%=user.getUserId()%>">삭제</a></td>
+				<td><a href = "<%= request.getContextPath() %>/user/userDetail.jsp?userId=<%=userDto.getUserId()%>"><%=userDto.getUserId()%></a></td>
+				<td><%=userDto.getUserName()%></td>		
+				<td><a href = "<%= request.getContextPath() %>/user/userUpdateForm.jsp?userId=<%=userDto.getUserId()%>">수정</a></td>
+				<td><a href = "<%= request.getContextPath() %>/user/userDeleteAction.jsp?userId=<%=userDto.getUserId()%>">삭제</a></td>
 			</tr>
 	<%
 		}

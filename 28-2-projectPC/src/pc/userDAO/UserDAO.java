@@ -172,4 +172,65 @@ public class UserDAO {
 		preparedstatement.close();
 		connection.close();
 	}
+	
+	public void userDelete(String userId) throws ClassNotFoundException, SQLException {
+		System.out.println("06_userDelete UserDAO.java");
+		
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		System.out.println(connection + "<-- connection");
+		
+		preparedstatement = connection.prepareStatement("DELETE FROM pc_user WHERE user_id = ?");
+		
+		preparedstatement = connection.prepareStatement("DELETE FROM pc_user WHERE user_id = ?");
+		preparedstatement.setString(1, userId);
+		
+		preparedstatement.executeUpdate();
+		
+		preparedstatement.close();
+		connection.close();
+	}
+	
+	public ArrayList<UserDTO> userSelectSearch(String searchKey, String searchValue, UserDTO userDto) throws ClassNotFoundException, SQLException{
+		System.out.println("07_userSelectSearch UserDAO.java");
+		
+		ArrayList<UserDTO> list = new ArrayList<>();
+		
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		System.out.println(connection + "<-- connection");
+		
+		if(searchKey == null & searchValue == null){
+			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user");
+		}else if(searchKey != null & searchValue.equals("")){
+			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user;");
+		}else if(searchKey != null & searchValue != null){
+			if(searchKey.equals(userDto.getUserId())){
+				preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
+				preparedstatement.setString(1, searchValue);
+			}else if(searchKey.equals(userDto.getUserName())){
+				preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
+				preparedstatement.setString(1, searchValue);
+			}
+		}
+		
+		while(result.next()) {
+			UserDTO userDTO = new UserDTO();
+			userDTO.setUserId(result.getString("user_id"));
+			userDTO.setUserPw(result.getString("user_pw"));
+			userDTO.setUserLevel(result.getString("user_level"));
+			userDTO.setUserName(result.getString("user_name"));
+			userDTO.setUserTime(result.getInt("user_time"));
+			userDTO.setUserDate(result.getString("user_date"));
+			userDTO.setUserPoint(result.getInt("user_point"));
+			userDTO.setSeatNo(result.getInt("seat_no"));
+			list.add(userDTO);
+		}
+		
+		result.close();
+		preparedstatement.close();
+		connection.close();
+		
+		return list;
+	}
 }

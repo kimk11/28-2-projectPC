@@ -10,4 +10,6 @@
 <%
 UserDAO userdao = new UserDAO();
 userdao.userInsert(userDto);
+
+response.sendRedirect(request.getContextPath() + "/user/userList.jsp");
 %>
