@@ -13,6 +13,45 @@ public class PayDAO {
 	private PreparedStatement preparedstatement = null;
 	private ResultSet resultset = null;
 	
+	
+	// <시간 추가 --start>  
+	// 가지고 있던 회원 시간에서 시간 추가  payAddTime
+	public int payAddTime(int time) throws ClassNotFoundException, SQLException {
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		
+		String sql = "";
+		preparedstatement = connection.prepareStatement(sql);
+		preparedstatement.setString(1, userId);
+		
+		return time;
+		
+	}
+	
+	// <시간 추가 ---End>  
+		
+		
+	//<회원의 원래 시간 조회 start> 
+	// pc_user테이블에 회원 시간 조회 userHaveTime
+	public int userHaveTime(String userId, String userName) throws ClassNotFoundException, SQLException {
+		int time = 0;
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+	
+		String sql = "SELECT user_time FROM pc_user WHERE user_id = ? AND user_name =?";
+		preparedstatement = connection.prepareStatement(sql);
+		preparedstatement.setString(1, userId);
+		preparedstatement.setString(2, userName);
+		
+		
+		resultset = preparedstatement.executeQuery();
+		
+		return time;
+	}
+	//<회원의 원래 시간 조회 ---End> 
+	
+	
+	
 // <정액권 추가 메서드 start>
 	// 정액권이 하나라도 있는지 없는지 확인
 	public int payNoCheck() throws ClassNotFoundException, SQLException {

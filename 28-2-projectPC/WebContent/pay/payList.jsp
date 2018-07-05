@@ -9,11 +9,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
+<%	
+	String userId = (String)session.getAttribute("sessionId");
+	String userName = (String)session.getAttribute("sessionName");
 	PayDAO payDao = new PayDAO();
 	ArrayList<PayDTO> arPayList = payDao.payList();
-	
-	
+
 %>
 	<div>
 		<table>
@@ -37,14 +38,39 @@
 							out.print((time/60)+"시간 ");
 						}
 					%>
+
 				</td>
+				<%
+// 				if(userId == null && userName == null) {
+					
+// 				}else{
+ 				%>
+				<td>
+					<form action="<%=request.getContextPath()%>/pay/payTimeGet.jsp" method="post" id="f">
+						<input type="hidden" name="time" value="<%= time %>">
+						<input type="hidden" name="id" value="id001">
+						<button type="button" id="btn">시간 추가</button>
+					</form>
+				</td>
+				
+				<%
+// 				}
+				%>
 			</tr>
 		<%
 	}
 %>
 		</table>
 	</div>
+<script>
+	var userTime = document.getElementById("userTime");
+	var btn = document.getElementById("btn");
+	btn.addEventListener("click", function() {
+		document.forms.f.submit();
+	});
+	
 
+</script>
 
 
 </body>
