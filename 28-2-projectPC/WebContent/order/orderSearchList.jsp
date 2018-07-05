@@ -6,11 +6,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	out.print(request.getParameter("goods"));
-%>
-	<%@ include file="../order/orderSearch.jsp" %>
 
+	
+
+	<%@ include file="../order/orderGoodsList.jsp" %>
+	
 
 </body>
 </html>

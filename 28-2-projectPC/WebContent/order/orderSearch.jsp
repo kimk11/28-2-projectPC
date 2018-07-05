@@ -23,23 +23,23 @@
 	var goods4 = document.getElementById('goods4');
 	
 	goodsAll.addEventListener('click', function() {
-		location.href='<%=request.getContextPath()%>/order/orderSearchList.jsp?goods=전체';
+		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=all';
 	});
 	
 	goods1.addEventListener('click', function() {
-		location.href='<%=request.getContextPath()%>/order/orderSearchList.jsp?goods=과자';
+		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods1';
 	});
 	
 	goods2.addEventListener('click', function() {
-		location.href='<%=request.getContextPath()%>/order/orderSearchList.jsp?goods=식품';
+		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods2';
 	});
 	
 	goods3.addEventListener('click', function() {
-		location.href='<%=request.getContextPath()%>/order/orderSearchList.jsp?goods=음료';
+		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods3';
 	});
 	
 	goods4.addEventListener('click', function() {
-		location.href='<%=request.getContextPath()%>/order/orderSearchList.jsp?goods=간식';
+		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods4';
 	});
 </script>
 	
