@@ -96,7 +96,7 @@ public class GoodsDAO {
 		Driver db = new Driver();
 		connection = db.driverConnection();
 		
-		if(sk == null && sv == null) {
+		if((sk == null && sv == null) || sk.equals("") && sv.equals("")) {
 			preparedstatement = connection.prepareStatement("SELECT count(goods_cate) FROM pc_goods");
 		// 전체 리스트
 		}else if(sk.equals("all")) {
@@ -151,7 +151,7 @@ public class GoodsDAO {
 		System.out.println("connection : " + connection);
 		
 		// 둘 다 null일 때 
-		if(sk == null && sv == null) {
+		if((sk == null && sv == null) || sk.equals("") && sv.equals("")) {
 			System.out.println("01조건_sk null sv null");
 			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name, goods_price,goods_cate,goods_date FROM pc_goods limit ?,?");
 			preparedstatement.setInt(1, StartPage);
@@ -198,28 +198,28 @@ public class GoodsDAO {
 		}else if(sk.equals("goods1") && sv != null) {
 			check="과자";
 			System.out.println("02조건_sk(과자)이고  sv null이 아님");
-			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_cate=? and goods_name="+sv+"");
+			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_cate=? and goods_name=?");
 			preparedstatement.setString(1,check);
 			preparedstatement.setString(2,sv);
 			//sk가 음료이고 sv 값이 있을 때
 		}else if(sk.equals("goods2") && sv != null) {
 			check="음료";
 			System.out.println("02조건_sk(음료)이고  sv null이 아님");
-			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_cate=? and goods_name="+sv+"");
+			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_cate=? and goods_name=?");
 			preparedstatement.setString(1,check);
 			preparedstatement.setString(2,sv);
 			//sk가 간식이고 sv 값이 있을 때
 		}else if(sk.equals("goods3") && sv != null) {
 			check="간식";
 			System.out.println("02조건_sk(간식)이고  sv null이 아님");
-			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_cate=? and goods_name="+sv+"");
+			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_cate=? and goods_name=?");
 			preparedstatement.setString(1,check);
 			preparedstatement.setString(2,sv);
 			//sk가 식품이고 sv 값이 있을 때
 		}else if(sk.equals("goods4") && sv != null) {
 			check="식품";
 			System.out.println("02조건_sk(식품)이고  sv null이 아님");
-			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_cate=? and goods_name="+sv+"");
+			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_cate=? and goods_name=?");
 			preparedstatement.setString(1,check);
 			preparedstatement.setString(2,sv);
 		}

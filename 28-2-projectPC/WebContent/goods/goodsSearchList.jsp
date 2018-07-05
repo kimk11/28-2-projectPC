@@ -34,7 +34,13 @@ table, tr, td, th {
 		}
 
 		String sk = request.getParameter("sk");
+		if(sk == null){
+			sk = "";
+		}
 		String sv = request.getParameter("sv");
+		if(sv == null){
+			sv = "";
+		}
 		String all = request.getParameter("all"); //전체리스트
 		String goods1 = request.getParameter("goods1"); //과자
 		String goods2 = request.getParameter("goods2"); //음료
