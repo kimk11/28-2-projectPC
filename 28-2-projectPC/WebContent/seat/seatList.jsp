@@ -23,7 +23,7 @@
 				<td>
 					<div class="seatbox">
 						<%
-							int seatNo=2;
+							int seatNo=1;
 							SeatDAO seatDao = new SeatDAO();
 							int check = seatDao.seatCheck(seatNo);
 							
@@ -33,15 +33,12 @@
 								<span class="black">x</span>
 						<%
 							}else{
-								
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String userTime = userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="seatId"><%= userDto.getUserId() %></span>
-								<span class="seatName"><%= userDto.getUserName() %></span>
-								<span class="seatTome"><%= userTime %></span>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
 						<%
 							}
 						%>
@@ -49,6 +46,25 @@
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=2;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -56,14 +72,71 @@
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=3;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=4;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=5;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>
 			</tr>
@@ -71,10 +144,48 @@
 			<tr>
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=6;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=7;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -82,14 +193,71 @@
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=8;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=9;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=10;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>
 			</tr>
@@ -97,10 +265,48 @@
 			<tr>
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=11;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=12;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -108,10 +314,48 @@
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=13;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
 					<div class="seatbox">
+						<%
+							seatNo=14;
+							check = seatDao.seatCheck(seatNo);
+							
+							if(check==0){
+						%>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black">x</span>
+						<%
+							}else{
+								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
+								UserDAO userDao = new UserDAO();
+								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+						%>
+								<span class="seatNo2"><%= seatNo %></span>
+								<span class="seatInfo"><%= info %></span>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 			</tr>

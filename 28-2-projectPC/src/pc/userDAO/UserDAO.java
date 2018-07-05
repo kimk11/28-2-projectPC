@@ -245,7 +245,8 @@ public class UserDAO {
 		}else if(time<60) {
 			userTime = time%60+"분";
 		}else if(time>60) {
-			userTime = time/60+"시간 "+time%60+"분";
+			userTime = time/60+"시간";
+			userTime += time%60+"분";
 		}
 		
 		return userTime ; 
