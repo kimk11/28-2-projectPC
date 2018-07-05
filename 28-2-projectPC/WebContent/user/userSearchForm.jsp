@@ -8,6 +8,7 @@
 	<body>
 		<form action = "<%=request.getContextPath()%>/user/userSearchList.jsp" method = "post">
 			<select name = "searchKey">
+				<option value = "userAll">전체</option>
 				<option value = "userId">회원아이디</option>
 				<option value = "userName">회원이름</option>
 			</select>

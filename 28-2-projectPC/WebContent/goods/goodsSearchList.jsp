@@ -15,14 +15,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>상품 조회 리스트</title>
-<title>Insert title here</title>
-<style>
-table, tr, td, th {
-	border: solid 1px #cccccc;
-	border-collapse: collapse;
-}
-</style>
+<title>goodsSearchList</title>
+
 </head>
 <body>
 	<%
@@ -58,10 +52,8 @@ table, tr, td, th {
 		}
 	%>
 	<!-- 상품 리스트 테이블 -->
-	<h2>상품 조회 리스트</h2>
-	<%@ include file = "./goodsSearchForm.jsp"%>
-	<br>
-	<table>
+	<%@ include file = "./goodsSearchForm.jsp"%><br>
+	<table border = "1">
 		<tr>
 			<th>상품코드</th>
 			<th>상품명</th>

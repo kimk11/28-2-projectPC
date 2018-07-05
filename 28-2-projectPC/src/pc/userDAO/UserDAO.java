@@ -199,8 +199,8 @@ public class UserDAO {
 	}
 	
 	//회원정보를 검색하는 메서드
-	public ArrayList<UserDTO> userSelectSearch(String searchKey, String searchValue) throws ClassNotFoundException, SQLException{
-		System.out.println("07_userSelectSearch UserDAO.java");
+	public ArrayList<UserDTO> userSelectSearch(String searchKey, String searchValue, int begin, int rowPerPage) throws ClassNotFoundException, SQLException{
+		System.out.println("07_01_userSelectSearch UserDAO.java");
 		
 		ArrayList<UserDTO> list = new ArrayList<>();
 		
@@ -209,9 +209,13 @@ public class UserDAO {
 		System.out.println(connection + "<-- connection");
 		
 		if(searchKey == null & searchValue == null){
-			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user");
+			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
+			preparedstatement.setInt(1, begin);
+			preparedstatement.setInt(2, rowPerPage);
 		}else if(searchKey != null & searchValue.equals("")){
-			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user;");
+			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
+			preparedstatement.setInt(1, begin);
+			preparedstatement.setInt(2, rowPerPage);
 		}else if(searchKey != null & searchValue != null){
 			if(searchKey.equals("userId")){
 				preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
@@ -242,6 +246,38 @@ public class UserDAO {
 		connection.close();
 		
 		return list;
+	}
+	
+	//pc_user 테이블에 검색한 회원정보의 총 행의 갯수를 알려주는 메서드
+	public int userCountSearch(String searchKey, String searchValue) throws ClassNotFoundException, SQLException {
+		System.out.println("07_02_userCountSearch UserDAO.java");
+
+		int rowNumber = 0;
+		
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		System.out.println(connection + "<-- connection");
+		
+		if(searchKey == null) {
+			preparedstatement = connection.prepareStatement("SELECT count(*) AS count FROM pc_user");
+		}else if(searchKey.equals("userAll")){
+			preparedstatement = connection.prepareStatement("SELECT count(*) AS count FROM pc_user");
+		}else {
+			preparedstatement = connection.prepareStatement("SELECT count(*) AS count FROM pc_user WHERE user_id = ?");
+			preparedstatement.setString(1, searchKey);
+		}
+		
+		result = preparedstatement.executeQuery();
+		
+		if(result.next()) {
+			rowNumber = result.getInt("count");
+		}
+		
+		result.close();
+		preparedstatement.close();
+		connection.close();
+
+		return rowNumber;
 	}
 	
 	//userTime을 시간으로 바꾸는 메서드
