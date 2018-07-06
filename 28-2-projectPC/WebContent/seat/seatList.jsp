@@ -52,7 +52,6 @@
 								<span class="seatInfo"><%= info %></span>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
-
 									<button type="submit" class="btn">종료</button>
 								</form>
 						<%
@@ -79,6 +78,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -105,6 +108,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -128,6 +135,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -151,6 +162,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -177,6 +192,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -200,6 +219,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -226,6 +249,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -249,6 +276,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -272,6 +303,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -298,6 +333,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -321,6 +360,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -347,6 +390,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
@@ -370,6 +417,10 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+									<button type="submit" class="btn">종료</button>
+								</form>
 						<%
 							}
 						%>
