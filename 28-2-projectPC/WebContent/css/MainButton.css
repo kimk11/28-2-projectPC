@@ -1,0 +1,70 @@
+@charset "EUC-KR";
+
+
+html,body{
+  height:100%;
+}
+body{
+  text-align:center;
+}
+body:before{
+  content:'';
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
+}
+#managerBtn, #payBtn{
+  font-weight : bold;
+  background:#0eaef3;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:200px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+#userBtn, #seatBtn{
+  font-weight : bold;
+  background:#c6ccc8;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:200px;
+  font-size:1.6em;
+  padding:0 2.2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+
+#managerBtn:hover, #payBtn:hover{
+  background:#fff;
+  color:#0eaef3;
+}
+#userBtn:hover, #seatBtn:hover{
+  background:#fff;
+  color:#0eaef3;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #0eaef3;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}

@@ -7,6 +7,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<style>
+	.paybox {
+	position:relative;
+	background-image :url("file:///C:/Users/Administrator/git/28-2-projectPC/28-2-projectPC/WebContent/image/btn.png");
+	margin-left: 20px;
+	margin-top: 20px;
+</style>
 </head>
 <body>
 <%	
@@ -30,6 +37,7 @@
 		System.out.println(time+"<<<<time");
 		%>
 			<tr>
+			<div class="paybox">
 				<td><%= payDto.getPaymentName() %></td>
 				<td>
 					<%
@@ -43,10 +51,11 @@
 					%>
 
 				</td>
+			</div>
 				<%
-// 				if(userId == null && userName == null) {
+ 				if(userId == null) {
 					
-// 				}else{
+ 				}else{
  				%>
 				<td>
 					<form action="<%=request.getContextPath()%>/pay/payTimeGet.jsp" method="post" id="f">
@@ -57,7 +66,7 @@
 				</td>
 				
 				<%
-// 				}
+ 				}
 				%>
 			</tr>
 		<%
