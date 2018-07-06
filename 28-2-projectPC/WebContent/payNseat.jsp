@@ -18,7 +18,7 @@
 		location.href='./pay/payment.jsp';
 	});
 	seatBtn.addEventListener("click", function() {
-		location.href='./seat/seatList.jsp';
+		location.href='./PCseatChoice.jsp';
 	});
 </script>
 </html>

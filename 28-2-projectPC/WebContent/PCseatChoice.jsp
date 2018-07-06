@@ -25,6 +25,9 @@
 	color: red;
 	font-size: 40px
 }
+table {
+	margin: 0 auto;
+}
 </style>
 </head>
 <body>
