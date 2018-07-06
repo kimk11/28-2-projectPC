@@ -1,0 +1,65 @@
+@charset "EUC-KR";
+#a{
+	margin: 0 auto;
+}
+#left{	
+	display: inline;
+	float: left;
+	
+	width: 120px;
+	height: 220px;
+	
+	background-color: #dddddd;
+	
+	border-radius: 10px;
+}
+
+#right{
+	color:#484848;
+	font-size:18px;
+	
+	display: inline;
+	float: left;
+	
+	margin-left: 15px;
+	
+	width: 285px;
+	height: 220px;
+	
+	border-radius: 10px;
+	
+	background-color: #ffffff;
+}
+
+#aline1 {
+
+	position:relative;
+	top:37px;
+	
+	margin-top:40px;
+	margin-left:20px;
+
+
+}
+
+#aline2 {
+
+	position:relative;
+	top:57px;
+	
+	margin-top:40px;
+	margin-left:20px;
+
+
+}
+
+#aline3 {
+
+	position:relative;
+	top:77px;
+	
+	margin-top:40px;
+	margin-left:20px;
+
+
+}

@@ -26,7 +26,15 @@
 		width: 450px;
 		height: 250px;
 		
-		background: #b7ffe2;
+		background: #808080;
+		
+		border-radius: 10px;
+	}
+	
+	#topInfo {
+		position: relative;
+		top:15px;
+		left:15px;
 	}
 	
 	#orderbtn {

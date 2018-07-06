@@ -15,6 +15,8 @@
 		top: 0px;
 		left:33px;
 		
+		color:#400040;
+		
 		margin: 0 auto;
 		width: 1800px;
 		height: 980px;
@@ -31,7 +33,15 @@
 		width: 450px;
 		height: 250px;
 		
-		background: #b7ffe2;
+		background: #808080;
+		
+		border-radius: 10px;
+	}
+	
+	#topInfo {
+		position: relative;
+		top:15px;
+		left:16px;
 	}
 	
 	#orderbtn {
@@ -53,8 +63,10 @@
 		width: 900px;
 		height: 600px;
 		
-		border:2px solid red;
-		background-color: #ff0000;
+		border:12px solid red;
+		background-color: #ffffff;
+		
+		border-radius: 30px;
 	}
 #imageClose {
 	position: relative;

@@ -28,7 +28,7 @@
 			%>
 			<script type="text/javascript">
 				alert('정액권 추가가 실패했습니다.');
-				location.href='/pay/payInsertForm.jsp';
+				location.href='<%=request.getContextPath()%>/pay/payInsertForm.jsp';
 			</script>
 			<%
 		}
@@ -45,7 +45,7 @@
 			%>
 			<script type="text/javascript">
 				alert('정액권 추가가 실패했습니다.');
-				location.href='/pay/payInsertForm.jsp';
+				location.href='<%=request.getContextPath()%>/pay/payInsertForm.jsp';
 			</script>
 			<%
 		}

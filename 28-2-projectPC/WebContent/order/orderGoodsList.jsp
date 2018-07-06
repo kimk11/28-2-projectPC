@@ -85,7 +85,7 @@ table, tr, td, th {
 				<td><%=goodsDto.getGoodsPrice()%></td>
 				<td><%=goodsDto.getGoodsCate()%></td>
 				<td><%=goodsDto.getGoodsDate()%></td>
-				<td><a>주문</a></td>
+				<td><a href="<%=request.getContextPath()%>/order/orderGoodsInsert.jsp?goodsCode=<%=goodsDto.getGoodsCode()%>">주문</a></td>
 			</tr>
 			<%
 				}

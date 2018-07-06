@@ -1,0 +1,19 @@
+@charset "EUC-KR";
+
+#orderTitle{
+	
+	
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+
+#orderList{
+	font-size: 15px;
+	
+}
+
+#orderPrice{
+	font-size: 15px;
+	
+}
