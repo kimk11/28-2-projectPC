@@ -9,6 +9,9 @@
 
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/loginUserInfo2.css" />
 
+
+
+
 </head>
 <body>
 <%
@@ -24,6 +27,8 @@
 %>
 	<div id="a">
 		<div id="left">
+			
+		
 		</div>
 			
 		<div id="right">

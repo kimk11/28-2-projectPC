@@ -1,0 +1,68 @@
+@charset "EUC-KR";
+@charset "EUC-KR";
+.seatbox {
+	position:relative;
+	background-color: #cbe9ef;
+	width: 150px;
+	height: 150px;
+	border-radius: 5px;
+	border: 3px solid #b1b9ae;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.seatboxblank {
+	background-color: #ffffff;
+	width: 100px;
+	height: 150px;
+	border-radius: 5px;
+
+}
+
+.black {
+	position: relative;
+	top:45px;
+	left:48px;
+	color: blue;
+	font-size: 40px
+}
+.black1 {
+	position: relative;
+	top:45px;
+	left:48px;
+	color: red;
+	font-size: 40px
+}
+
+.black2 {
+	position: relative;
+	top:45px;
+	left:46px;
+	color: red;
+	font-size: 40px
+}
+
+.seatNo {
+	position: relative;
+	top:-20px;
+	left:10px;
+	font-weight: bold;
+	font-size: 20px;
+	
+}
+
+.seatNo2 {
+	position: relative;
+	top:1px;
+	left:10px;
+	font-weight: bold;
+	font-size: 20px;
+	
+}
+
+.seatInfo {
+	position: relative;
+	top:20px;
+	left:35px;
+}
+

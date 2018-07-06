@@ -14,11 +14,17 @@
 	String userId = (String)session.getAttribute("sessionId");
 	String userName = (String)session.getAttribute("sessionName");
 
-	if(userId == null){
+	int check=0;
+	if(request.getParameter("check")!=null){
+		check=Integer.parseInt(request.getParameter("check"));
+	}
+	if(check==0){
 		//세션이 없을경우, 즉 로그인을 안햇을 경우
 		//로그인 폼 화면
 		//세션이 있을경우, 즉 로그인을 했을 경우
 		//로그인 한 회정 정보 화면
+		int seatNo = Integer.parseInt(request.getParameter("seatNo"));
+		
 %>
 	<div>
 		<section class="container">
@@ -30,6 +36,7 @@
 		        <div class="content">
 		            <div class="signin-cont cont">
 		                <form action="<%= request.getContextPath() %>/seat/seatLoginAction.jsp" method="post">
+		                	<input type="hidden" name="seatNo" value="<%= seatNo %>">
 		                    <input type="text" name="userId" id="email" class="inpt" required="required" placeholder="아이디">
 		               
 		                    <input type="password" name="userPw" id="password" class="inpt" required="required" placeholder="비밀번호">

@@ -10,6 +10,7 @@
 <body>
 <%
 	request.setCharacterEncoding("euckr");
+	int seatNo = Integer.parseInt(request.getParameter("seatNo"));
 %>
 	<jsp:useBean id="userDto" class="pc.DTO.UserDTO"/>
 	<jsp:setProperty property="*" name="userDto"/>
@@ -43,13 +44,14 @@
 		</script>
 		<%
 	}else if(3 == check){
+		seatDao.seatUserLogin(userDto, seatNo);
 		userDto = seatDao.seatLoginSession(userDto);
 		session.setAttribute("sessionId", userDto.getUserId());
 		session.setAttribute("sessionName", userDto.getUserName());
 
 		%>
 		<script type="text/javascript">
-			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp';
+			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp?check=1';
 		</script>
 		<%
 	}

@@ -8,10 +8,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 
-<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/seatList.css" />
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/pcseatChoice.css" />
 
 <style type="text/css">
 .black2 {
+	position: relative;
+	top:45px;
+	left:37px;
+	color: blue;
+	font-size: 40px
+}
+.black3 {
 	position: relative;
 	top:45px;
 	left:37px;
@@ -21,12 +28,7 @@
 </style>
 </head>
 <body>
-
-
-
-
-
-	<div>
+<div>
 		<table>
 			<tr>
 				<td>
@@ -39,15 +41,16 @@
 							if(check==0){
 						%>
 								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<span class="black">o</span>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit">로그인</button>
+								</form>
 						<%
 							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<span class="seatNo"><%= seatNo %></span>
+								<span class="black1">x</span>
 						<%
 							}
 						%>
@@ -60,20 +63,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black1">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -86,20 +90,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black1">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -109,20 +114,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black1">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -132,20 +138,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black1">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>
 			</tr>
@@ -158,20 +165,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black1">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -181,20 +189,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black1">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -207,20 +216,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black1">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -230,20 +240,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black1">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -253,20 +264,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black2">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black3">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>
 			</tr>
@@ -279,20 +291,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black2">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black3">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -302,20 +315,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black2">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black3">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -328,20 +342,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black2">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black3">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 				<td>
@@ -351,20 +366,21 @@
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
-						<%
-							}else{
-								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
-								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
-						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
-						<%
-							}
-						%>
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black2">o</span>
+										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+											<input type="hidden" name="seatNo" value="<%= seatNo %>">
+											<button type="submit">로그인</button>
+										</form>
+								<%
+									}else{
+								%>
+										<span class="seatNo"><%= seatNo %></span>
+										<span class="black3">x</span>
+								<%
+									}
+								%>
 					</div>
 				</td>	
 			</tr>

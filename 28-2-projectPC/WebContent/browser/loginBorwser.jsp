@@ -8,10 +8,10 @@
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/button.css" />
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/loginBrowser.css" />
 
+
 </head>
 <body>
 	<div id="wrapper">
-	
 		<div id="topright">
 <!-- 		회원정보 -->
 			<div id="topInfo">

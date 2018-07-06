@@ -32,7 +32,6 @@
 	}else{
 		%>
 		<script type="text/javascript">
-			alert('주문 되었습니다.');
 			location.href='<%=request.getContextPath()%>/browser/loginBrowserOrder.jsp';
 		</script>
 		<%

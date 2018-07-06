@@ -9,6 +9,13 @@
 
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/loginUserInfo.css" />
 
+<style type="text/css">
+	table {
+	margin: 0 auto;
+	margin-top: 80px;
+}
+</style>
+
 </head>
 <body>
 <%
@@ -24,6 +31,17 @@
 %>
 	<div id="a">
 		<div id="left">
+			<form action="<%= request.getContextPath() %>/seat/seatLogout.jsp" method="post">
+				<table>
+					<tr>
+						<td>
+							<input type="hidden" name="userId" value="<%= userId %>">
+							<input type="image" src="<%= request.getContextPath() %>/image/logout.JPG" value="Á¾·á" width="50px" height="50px">
+						</td>
+					</tr>
+				</table>
+			</form>
+		
 		</div>
 			
 		<div id="right">
