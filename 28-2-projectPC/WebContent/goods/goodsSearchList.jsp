@@ -22,6 +22,9 @@ table {
 }
 </style>
 </head>
+	<%@ include file="../AllSearch/AllSearch.jsp" %><br><br>
+	<%@ include file = "../goods/goodsSearchForm.jsp"%><br><br>
+
 <body>
 	<%
 		/* 페이징 작업 */
@@ -56,7 +59,7 @@ table {
 		}
 	%>
 	<!-- 상품 리스트 테이블 -->
-	<%@ include file = "./goodsSearchForm.jsp"%><br>
+
 	<table border = "1">
 		<tr>
 			<th>상품코드</th>

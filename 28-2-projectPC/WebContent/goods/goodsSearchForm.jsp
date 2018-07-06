@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="./goodsSearchList.jsp"  method="post">
+	<form action = "<%=request.getContextPath()%>/goods/goodsSearchList.jsp" method = "post">
 		<select name="sk">
 			<option value="all">ÀüÃ¼</option>
 			<optgroup label="-------"></optgroup>
