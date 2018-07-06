@@ -8,10 +8,20 @@
 <body>
 <%
 request.setCharacterEncoding("euc-kr");
-
+%>
+		<%@ include file="../AllSearch/AllSearch.jsp" %><br><br>
+<%
 String search = request.getParameter("search");
+if(request.getParameter("search")==null){
+	search="";
+}
 
-if(search.equals("상품검색")){
+if(search==""){
+	%>
+<%@ include file="../user/userSearchList.jsp"%>
+	<%
+	
+}else if(search.equals("상품검색")){
 	%>
 	<%@ include file="../goods/goodsSearchList.jsp"%>
 	<%

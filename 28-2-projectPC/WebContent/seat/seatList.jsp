@@ -11,13 +11,13 @@
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/seatList.css" />
 
 <style type="text/css">
-.black2 {
-	position: relative;
-	top:45px;
-	left:37px;
-	color: red;
-	font-size: 40px
-}
+/* .black2 { */
+/* 	position: relative; */
+/* 	top:-10px; */
+/* 	left:37px; */
+/* 	color: red; */
+/* 	font-size: 40px */
+/* } */
 </style>
 
 </head>
@@ -40,16 +40,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -68,16 +68,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -98,16 +98,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -125,16 +125,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -152,16 +152,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -182,16 +182,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -209,16 +209,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -239,16 +239,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -266,16 +266,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -293,16 +293,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black2">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -323,16 +323,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black2">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -350,16 +350,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black2">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -380,16 +380,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black2">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>
@@ -407,16 +407,16 @@
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black2">x</span>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black2">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
 								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
 						%>
-								<span class="seatNo2"><%= seatNo %></span>
-								<span class="seatInfo"><%= info %></span>
+								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
 									<button type="submit" class="btn">종료</button>

@@ -19,7 +19,7 @@
 	GoodsDAO goodsDao = new GoodsDAO();
 	goodsDao.updateGoods(g);
 
-	response.sendRedirect(request.getContextPath()+"/goods/goodsSearchList.jsp");
+	response.sendRedirect(request.getContextPath()+"/managerAllSearch.jsp");
 %>
 </body>
 </html>

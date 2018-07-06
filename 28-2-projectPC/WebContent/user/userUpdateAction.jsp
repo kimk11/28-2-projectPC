@@ -15,7 +15,7 @@
 			UserDAO userDao = new UserDAO();
 			userDao.userUpdate(userDto);
 			
-			response.sendRedirect(request.getContextPath() + "/user/userList.jsp");
+			response.sendRedirect(request.getContextPath()+"/managerAllSearch.jsp");
 		%>
 	</body>
 </html>

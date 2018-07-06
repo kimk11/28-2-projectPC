@@ -22,7 +22,7 @@ table {
 }
 </style>
 </head>
-	<%@ include file="../AllSearch/AllSearch.jsp" %><br><br>
+<%-- 	<%@ include file="../AllSearch/AllSearch.jsp" %><br><br> --%>
 	<%@ include file = "../goods/goodsSearchForm.jsp"%><br><br>
 
 <body>
@@ -82,10 +82,8 @@ table {
 			<td><%=goodsDto.getGoodsPrice()%></td>
 			<td><%=goodsDto.getGoodsCate()%></td>
 			<td><%=goodsDto.getGoodsDate()%></td>
-			<td><a
-				href="goodsUpdateForm.jsp?code=<%=goodsDto.getGoodsCode()%>">수정</a></td>
-			<td><a
-				href="goodsDeleteAction.jsp?code=<%=goodsDto.getGoodsCode()%>">삭제</a></td>
+			<td><a href = "<%= request.getContextPath() %>/goods/goodsUpdateForm.jsp?code=<%=goodsDto.getGoodsCode()%>">수정</a></td>
+			<td><a href = "<%= request.getContextPath() %>/goods/goodsDeleteAction.jsp?code=<%=goodsDto.getGoodsCode()%>">삭제</a></td>
 		</tr>
 		<%
 			}

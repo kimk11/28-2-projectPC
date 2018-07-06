@@ -9,21 +9,23 @@
 
 </head>
 <body>
-	<button type="button" id="goodsAll" class="button lightGrey rounded">상품검색</button>
-	<button type="button" id="goods1" class="button lightGrey rounded">회원검색</button>
+	<button type="button" id="goods" class="button lightGrey rounded">상품검색</button>
+	<button type="button" id="user" class="button lightGrey rounded">회원검색</button>
 		
 <script type="text/javascript">
-	var goods1 = document.getElementById('goodsAll');
-	var goods2 = document.getElementById('goods1');
-	var goods3 = document.getElementById('goods2');
+	var goods = document.getElementById('goods');
+	var user = document.getElementById('user');
+	var home = document.getElementById('home');
 	
-	goods1.addEventListener('click', function() {
+	goods.addEventListener('click', function() {
 		location.href='<%=request.getContextPath()%>/AllSearch/AllSearchList.jsp?search=상품검색';
 	});
 	
-	goods2.addEventListener('click', function() {
+	user.addEventListener('click', function() {
 		location.href='<%=request.getContextPath()%>/AllSearch/AllSearchList.jsp?search=회원검색';
 	});
+	
+
 </script>
 	
 </body>

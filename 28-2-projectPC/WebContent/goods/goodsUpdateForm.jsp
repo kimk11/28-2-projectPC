@@ -19,24 +19,33 @@ GoodsDAO goodsDao = new GoodsDAO();
 GoodsDTO goodsDto = goodsDao.SelectforUpdate(code);
 
 %>
-	<h2>상품 수정</h2>
-	<form action="./goodsUpdateAction.jsp" method="post">
-		<label>상품코드 :</label>
-		<input type="text" value="<%=code%>" name="goodsCode"> <br>
-		<label>상 품 명 :</label>
-		<input type="text" value="<%= goodsDto.getGoodsName() %>" name="goodsName"><br>
-		<label>가　　격 :</label>
-		<input type="text" value="<%= goodsDto.getGoodsPrice()%>" name="goodsPrice"><br>	
-		<label>종　　류 :</label>
-		<select name="goodsCate">
-			<option value="과자">과자</option>
-			<option value="음료">음료</option>
-			<option value="간식">간식</option>
-			<option value="식품">식품</option>
-		</select><br>
-		<label>등록날짜 :</label>
-		<span><%=goodsDto.getGoodsDate() %></span><br>
-		<button type ="submit">등록</button>
-	</form>
+		<h1>상품 정보 수정</h1>
+		<form action="<%= request.getContextPath() %>/user/userUpdateAction.jsp" method = "post">
+			<table border = "1">
+				<tr>
+					<td>상품코드</td>
+					<td><input type = "text" name = goodsCode value = "<%=code%>" readonly></td>
+				</tr>
+				<tr>
+					<td>상품명</td>
+					<td><input type = "text" name = goodsName value = "<%= goodsDto.getGoodsName() %>"></td>
+				</tr>
+				<tr>
+					<td>가격</td>
+					<td><input type = "text" name = goodsPrice value = "<%= goodsDto.getGoodsPrice()%>"></td>
+				</tr>
+				<tr>
+					<td>종류</td>
+					<td><input type = "text" name = goodsCate value = "<%= goodsDto.getGoodsCate()%>" ></td>
+				</tr>
+				<tr>
+					<td>등록날짜</td>
+					<td><input type = "text" name = goodsDate value = "<%=goodsDto.getGoodsDate() %>"></td>
+				</tr>
+			</table>
+			<div>
+				<input type = "submit" value = "상품 정보 수정">
+			</div>
+		</form>
 </body>
 </html>

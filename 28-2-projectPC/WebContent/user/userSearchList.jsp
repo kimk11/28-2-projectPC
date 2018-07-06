@@ -15,7 +15,7 @@
 		</style>
 		
 	</head>
-	<%@ include file="../AllSearch/AllSearch.jsp" %><br><br>
+
 	<%@ include file="../user/userSearchForm.jsp" %><br><br>
 	<body>
 		<table border ="1">
