@@ -206,24 +206,34 @@ public class UserDAO {
 		
 		Driver driver = new Driver();
 		connection = driver.driverConnection();
-		System.out.println(connection + "<-- connection");
+		System.out.println(connection + "<-- connection");		
 		
-		if(searchKey == null & searchValue == null){
+		if((searchKey == null && searchValue == null) || (searchKey.equals("") && searchValue.equals(""))){
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, begin);
 			preparedstatement.setInt(2, rowPerPage);
-		}else if(searchKey != null & searchValue.equals("")){
+		}else if(searchKey.equals("userAll") && searchValue == null || (searchKey.equals("userAll") && searchValue.equals(""))) {
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, begin);
 			preparedstatement.setInt(2, rowPerPage);
-		}else if(searchKey != null & searchValue != null){
-			if(searchKey.equals("userId")){
-				preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
-				preparedstatement.setString(1, searchValue);
-			}else if(searchKey.equals("userName")){
-				preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
-				preparedstatement.setString(1, searchValue);
-			}
+		}else if(searchKey.equals("userId") && searchValue == "") {
+			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
+			preparedstatement.setInt(1, 0);
+			preparedstatement.setInt(2, 0);
+		}else if(searchKey.equals("userName") && searchValue == "") {
+			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
+			preparedstatement.setInt(1, 0);
+			preparedstatement.setInt(2, 0);
+		}else if(searchKey.equals("userId")&& searchValue != null) {
+			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
+			//preparedstatement.setInt(1, begin);
+			//preparedstatement.setInt(2, rowPerPage);
+			preparedstatement.setString(1, searchValue);
+		}else if(searchKey.equals("userName")&& searchValue != null) {
+			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_Name = ?");
+			//preparedstatement.setInt(1, begin);
+			//preparedstatement.setInt(2, rowPerPage);
+			preparedstatement.setString(1, searchValue);
 		}
 		
 		result = preparedstatement.executeQuery();
@@ -256,15 +266,18 @@ public class UserDAO {
 		
 		Driver driver = new Driver();
 		connection = driver.driverConnection();
-		System.out.println(connection + "<-- connection");
+		System.out.println(connection + "<-- connection");		
 		
-		if(searchKey == null) {
+		if(searchKey == null && searchValue == null || searchKey.equals("") && searchKey.equals("")) {
 			preparedstatement = connection.prepareStatement("SELECT count(*) AS count FROM pc_user");
-		}else if(searchKey.equals("userAll")){
+		}else if(searchKey.equals("userAll")) {
 			preparedstatement = connection.prepareStatement("SELECT count(*) AS count FROM pc_user");
-		}else {
+		}else if(searchKey.equals("userId")) {
 			preparedstatement = connection.prepareStatement("SELECT count(*) AS count FROM pc_user WHERE user_id = ?");
-			preparedstatement.setString(1, searchKey);
+			preparedstatement.setString(1, searchValue);
+		}else if(searchKey.equals("userName")) {
+			preparedstatement = connection.prepareStatement("SELECT count(*) AS count FROM pc_user WHERE user_id = ?");
+			preparedstatement.setString(1, searchValue);
 		}
 		
 		result = preparedstatement.executeQuery();

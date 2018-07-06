@@ -16,7 +16,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>goodsSearchList</title>
-
+<style>
+table {
+	margin: 0 auto;
+}
+</style>
 </head>
 <body>
 	<%
@@ -88,7 +92,7 @@
 		if (currentPage > 1) {
 	%>
 	<a
-		href="./goodsSearchList.jsp?currentPage=<%=currentPage - 1%>&sk=<%=sk%>&sv=<%=sv%>">이전</a>
+		href="../goods/goodsSearchList.jsp?currentPage=<%=currentPage - 1%>&sk=<%=sk%>&sv=<%=sv%>&search=상품검색">이전</a>
 	<%
 		}
 
@@ -100,7 +104,7 @@
 	%>
 
 	<a
-		href="./goodsSearchList.jsp?currentPage=<%=currentPage + 1%>&sk=<%=sk%>&sv=<%=sv%>">다음</a>
+		href="../goods/goodsSearchList.jsp?currentPage=<%=currentPage + 1%>&sk=<%=sk%>&sv=<%=sv%>&search=상품검색">다음</a>
 	<%
 		}
 	%>
