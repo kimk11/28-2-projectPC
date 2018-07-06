@@ -21,8 +21,10 @@
 		//로그인 폼 화면
 		//세션이 있을경우, 즉 로그인을 했을 경우
 		//로그인 한 회정 정보 화면
-%>
 
+	if(userId == null){
+%>
+	
 	<div>
 		<section class="container">
 		    <article class="half">
@@ -32,7 +34,7 @@
 		        </div>
 		        <div class="content">
 		            <div class="signin-cont cont">
-		                <form action="<%= request.getContextPath() %>/pay/payment.jsp" method="post">
+		                <form action="<%= request.getContextPath() %>/pay/payLoginAction.jsp" method="post">
 		                    <input type="text" name="userId" id="email" class="inpt" required="required" placeholder="아이디">
 		               
 		                    <input type="password" name="userPw" id="password" class="inpt" required="required" placeholder="비밀번호">
@@ -51,8 +53,17 @@
 		</section>
 	</div>
 <%	
-	
+	}else{
+		
+		response.sendRedirect(request.getContextPath() +"./payment.jsp");
+	}
 %>
+	
+
+	
+
+
+
 
 <!-- js 코드 start-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 

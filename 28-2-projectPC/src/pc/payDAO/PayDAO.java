@@ -16,15 +16,20 @@ public class PayDAO {
 	
 	// <시간 추가 --start>  
 	// 가지고 있던 회원 시간에서 시간 추가  payAddTime
-	public int payAddTime(int time) throws ClassNotFoundException, SQLException {
+	public int payAddTime(int time, String userId) throws ClassNotFoundException, SQLException {
+		int addTime = 0;
 		Driver driver = new Driver();
 		connection = driver.driverConnection();
-		
-		String sql = "";
+		System.out.println(connection + "<-- connection");
+		String sql = "update pc_user set user_time = ? where user_id = ?";
 		preparedstatement = connection.prepareStatement(sql);
-		preparedstatement.setString(1, userId);
+		preparedstatement.setInt(1, time);
+		preparedstatement.setString(2, userId);
+//		System.out.println(payDto.getPaymentName() + "<--getPaymentName()");
+		preparedstatement.executeUpdate();
+	
 		
-		return time;
+		return addTime;
 		
 	}
 	
@@ -33,20 +38,23 @@ public class PayDAO {
 		
 	//<회원의 원래 시간 조회 start> 
 	// pc_user테이블에 회원 시간 조회 userHaveTime
-	public int userHaveTime(String userId, String userName) throws ClassNotFoundException, SQLException {
-		int time = 0;
+	public int userHaveTime(String userId) throws ClassNotFoundException, SQLException {
+		int addTime = 0;
 		Driver driver = new Driver();
 		connection = driver.driverConnection();
 	
-		String sql = "SELECT user_time FROM pc_user WHERE user_id = ? AND user_name =?";
+		String sql = "SELECT user_time FROM pc_user WHERE user_id = ?";
 		preparedstatement = connection.prepareStatement(sql);
 		preparedstatement.setString(1, userId);
-		preparedstatement.setString(2, userName);
 		
 		
 		resultset = preparedstatement.executeQuery();
 		
-		return time;
+		while(resultset.next()) {
+			addTime = resultset.getInt(1);
+		}
+		
+		return addTime;
 	}
 	//<회원의 원래 시간 조회 ---End> 
 	

@@ -12,9 +12,11 @@
 <%	
 	String userId = (String)session.getAttribute("sessionId");
 	String userName = (String)session.getAttribute("sessionName");
+	System.out.println(userId+"<--userId");
+	System.out.println(userName+"<--userName");
 	PayDAO payDao = new PayDAO();
 	ArrayList<PayDTO> arPayList = payDao.payList();
-
+	int addTime = payDao.userHaveTime(userId);
 %>
 	<div>
 		<table>
@@ -25,6 +27,7 @@
 	for(int i=0 ; i<arPayList.size() ; i++){
 		PayDTO payDto = arPayList.get(i);
 		int time = payDto.getPaymentTime();
+		System.out.println(time+"<<<<time");
 		%>
 			<tr>
 				<td><%= payDto.getPaymentName() %></td>
@@ -47,9 +50,9 @@
  				%>
 				<td>
 					<form action="<%=request.getContextPath()%>/pay/payTimeGet.jsp" method="post" id="f">
-						<input type="hidden" name="time" value="<%= time %>">
+						<input type="hidden" name="time" value="<%= payDto.getPaymentTime() %>">
 						<input type="hidden" name="id" value="id001">
-						<button type="button" id="btn">시간 추가</button>
+						<button type="submit" id="btn">시간 추가</button>
 					</form>
 				</td>
 				
@@ -62,15 +65,7 @@
 %>
 		</table>
 	</div>
-<script>
-	var userTime = document.getElementById("userTime");
-	var btn = document.getElementById("btn");
-	btn.addEventListener("click", function() {
-		document.forms.f.submit();
-	});
-	
 
-</script>
 
 
 </body>
