@@ -26,6 +26,14 @@
 	font-size: 40px
 }
 
+.black2 {
+	position: relative;
+	top:45px;
+	left:46px;
+	color: red;
+	font-size: 40px
+}
+
 .seatNo {
 	position: relative;
 	top:-20px;

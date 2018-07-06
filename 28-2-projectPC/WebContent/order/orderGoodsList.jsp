@@ -58,7 +58,7 @@ table, tr, td, th {
 		%>
 		<!-- 상품 리스트 테이블 -->
 		<br><br>
-		<h2>주문 목록</h2>
+		<h2>M E N U</h2>
 		<br>
 		<%@ include file="../order/orderSearch.jsp" %>
 		<br>

@@ -48,12 +48,13 @@ public class OrderDAO {
 		Driver db = new Driver();
 		connection = db.driverConnection();
 		
-		String sql = "insert into pc_order(user_id,goods_code,seat_no,goods_price) values(?,?,?,?)";
+		String sql = "insert into pc_order(user_id,goods_code,seat_no,goods_price,goods_name) values(?,?,?,?,?)";
 		preparedstatement = connection.prepareStatement(sql);
 		preparedstatement.setString(1, userDto.getUserId());
 		preparedstatement.setInt(2, goodsDto.getGoodsCode());
 		preparedstatement.setInt(3, userDto.getSeatNo());
 		preparedstatement.setInt(4, goodsDto.goodsPrice);
+		preparedstatement.setString(5, goodsDto.getGoodsName());
 		
 		int check = preparedstatement.executeUpdate();
 		
