@@ -31,6 +31,7 @@
 		<table>
 			<tr>
 				<td>
+				
 					<div class="seatbox">
 						<%
 							int seatNo=1;
@@ -49,10 +50,16 @@
 						%>
 								<span class="seatNo2"><%= seatNo %></span>
 								<span class="seatInfo"><%= info %></span>
+								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
+									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
+
+									<button type="submit" class="btn">Á¾·á</button>
+								</form>
 						<%
 							}
 						%>
 					</div>
+				
 				</td>	
 				<td>
 					<div class="seatbox">

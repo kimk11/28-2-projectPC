@@ -165,4 +165,17 @@ public class SeatDAO {
 		return userDto;
 	}
 // <좌석 리스트 정보 end>
+	public void seatUpdateEnd(String userId) throws ClassNotFoundException, SQLException {
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		
+		String sql = "UPDATE pc_user SET seat_no = 0 WHERE user_id = ?";
+		preparedstatement = connection.prepareStatement(sql);
+		preparedstatement.setString(1, userId);
+		
+		preparedstatement.executeUpdate();
+		
+		preparedstatement.close();
+		connection.close();
+	}
 }
