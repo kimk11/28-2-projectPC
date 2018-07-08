@@ -10,29 +10,14 @@
 
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/seatList.css" />
 
-<style type="text/css">
-/* .black2 { */
-/* 	position: relative; */
-/* 	top:-10px; */
-/* 	left:37px; */
-/* 	color: red; */
-/* 	font-size: 40px */
-/* } */
-</style>
-
 </head>
 <body>
-
-
-
-
-
 	<div>
 		<table>
 			<tr>
 				<td>
 				
-					<div class="seatbox">
+					<div class="seatbox clearfix">
 						<%
 							int seatNo=1;
 							SeatDAO seatDao = new SeatDAO();
@@ -46,9 +31,9 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
-								<div class="seatNo2"><%= seatNo %></div>
+								<div class="seatNo"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
 								<form action = "<%= request.getContextPath() %>/seat/seatUpdateAction.jsp" method = "post">
 									<input type = "hidden" name = "userId" value = "<%=userDto.getUserId()%>">
@@ -74,7 +59,7 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -104,7 +89,7 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -131,7 +116,7 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -158,7 +143,7 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -188,7 +173,7 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -215,7 +200,7 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -245,7 +230,7 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -272,7 +257,7 @@
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -294,12 +279,12 @@
 							if(check==0){
 						%>
 								<div class="seatNo"><%= seatNo %></div>
-								<div class="black2">x</div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -324,12 +309,12 @@
 							if(check==0){
 						%>
 								<div class="seatNo"><%= seatNo %></div>
-								<div class="black2">x</div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -351,12 +336,12 @@
 							if(check==0){
 						%>
 								<div class="seatNo"><%= seatNo %></div>
-								<div class="black2">x</div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -381,12 +366,12 @@
 							if(check==0){
 						%>
 								<div class="seatNo"><%= seatNo %></div>
-								<div class="black2">x</div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>
@@ -408,12 +393,12 @@
 							if(check==0){
 						%>
 								<div class="seatNo"><%= seatNo %></div>
-								<div class="black2">x</div>
+								<div class="black">x</div>
 						<%
 							}else{
 								UserDTO userDto = seatDao.seatSelectUserInfo(seatNo);
 								UserDAO userDao = new UserDAO();
-								String info= userDto.getUserId()+"<br><br>&nbsp&nbsp"+userDto.getUserName()+"<br><br>&nbsp"+userDao.userGetTime(userDto);
+								String info= userDto.getUserId()+"<br><br>"+userDto.getUserName()+"<br><br>"+userDao.userGetTime(userDto);
 						%>
 								<div class="seatNo2"><%= seatNo %></div>
 								<div class="seatInfo"><%= info %></div>

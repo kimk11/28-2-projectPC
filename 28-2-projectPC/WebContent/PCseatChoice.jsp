@@ -11,20 +11,6 @@
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/pcseatChoice.css" />
 
 <style type="text/css">
-.black2 {
-	position: relative;
-	top:45px;
-	left:37px;
-	color: blue;
-	font-size: 40px
-}
-.black3 {
-	position: relative;
-	top:45px;
-	left:37px;
-	color: red;
-	font-size: 40px
-}
 table {
 	margin: 0 auto;
 }
@@ -35,7 +21,7 @@ table {
 		<table>
 			<tr>
 				<td>
-					<div class="seatbox">
+					<div class="seatbox clearfix">
 						<%
 							int seatNo=1;
 							SeatDAO seatDao = new SeatDAO();
@@ -43,17 +29,19 @@ table {
 							
 							if(check==0){
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black">o</span>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
 								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
 									<input type="hidden" name="seatNo" value="<%= seatNo %>">
-									<button type="submit">로그인</button>
+									<button type="submit" class="seatLogin">로그인</button>
 								</form>
 						<%
 							}else{
 						%>
-								<span class="seatNo"><%= seatNo %></span>
-								<span class="black1">x</span>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
 						<%
 							}
 						%>
@@ -66,21 +54,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black1">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -93,21 +83,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black1">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -117,21 +109,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black1">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -141,21 +135,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black1">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>
 			</tr>
@@ -168,21 +164,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black1">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -192,21 +190,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black1">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -219,21 +219,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black1">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -243,21 +245,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black1">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -267,21 +271,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black2">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black3">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>
 			</tr>
@@ -294,21 +300,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black2">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black3">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -318,21 +326,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black2">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black3">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -345,21 +355,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black2">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black3">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 				<td>
@@ -369,21 +381,23 @@ table {
 							check = seatDao.seatCheck(seatNo);
 							
 							if(check==0){
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black2">o</span>
-										<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
-											<input type="hidden" name="seatNo" value="<%= seatNo %>">
-											<button type="submit">로그인</button>
-										</form>
-								<%
-									}else{
-								%>
-										<span class="seatNo"><%= seatNo %></span>
-										<span class="black3">x</span>
-								<%
-									}
-								%>
+						%>
+								<div class="seatCheck_o">사용가능</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_o">o</div>
+								<form action="<%= request.getContextPath() %>/seat/seatLogin.jsp" method="post">
+									<input type="hidden" name="seatNo" value="<%= seatNo %>">
+									<button type="submit" class="seatLogin">로그인</button>
+								</form>
+						<%
+							}else{
+						%>
+								<div class="seatCheck_x">사용중</div>
+								<div class="seatNo"><%= seatNo %></div>
+								<div class="black_x">x</div>
+						<%
+							}
+						%>
 					</div>
 				</td>	
 			</tr>
