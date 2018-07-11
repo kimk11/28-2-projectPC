@@ -225,9 +225,9 @@ public class GoodsDAO {
 		}
 		resultSet = preparedstatement.executeQuery();
 		
-		while(resultSet.next()) {
-			GoodsDTO goodsDto = new GoodsDTO();
-			goodsDto.setGoodsCode(resultSet.getInt(1));
+			while(resultSet.next()) {
+				GoodsDTO goodsDto = new GoodsDTO();
+				goodsDto.setGoodsCode(resultSet.getInt(1));
 			goodsDto.setGoodsName(resultSet.getString(2));
 			goodsDto.setGoodsPrice(resultSet.getInt(3));
 			goodsDto.setGoodsCate(resultSet.getString(4));

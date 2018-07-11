@@ -119,13 +119,39 @@ public class PayDAO {
 	}
 // <정액권 추가 메서드 end>
 	
+	// <정액권 보기 (리스트) 메서드 start2>
+		public ArrayList<PayDTO> payList2() throws ClassNotFoundException, SQLException {
+			ArrayList<PayDTO> arPayList2 = new ArrayList<>();
+			Driver driver = new Driver();
+			connection = driver.driverConnection();
+			
+			String sql = "select payment_no,payment_name,payment_time from pc_payment limit 3,3";
+			preparedstatement = connection.prepareStatement(sql);
+			resultset = preparedstatement.executeQuery();
+			
+			while(resultset.next()) {
+				PayDTO payDto = new PayDTO();
+				payDto.setPaymentNo(resultset.getInt(1));
+				payDto.setPaymentName(resultset.getString(2));
+				payDto.setPaymentTime(resultset.getInt(3));
+				arPayList2.add(payDto);
+			}
+			
+			resultset.close();
+			preparedstatement.close();
+			connection.close();
+			
+			return arPayList2;
+		}
+	// <정액권 보기 메서드 end>
+	
 // <정액권 보기 (리스트) 메서드 start>
 	public ArrayList<PayDTO> payList() throws ClassNotFoundException, SQLException {
 		ArrayList<PayDTO> arPayList = new ArrayList<>();
 		Driver driver = new Driver();
 		connection = driver.driverConnection();
 		
-		String sql = "select payment_no,payment_name,payment_time from pc_payment";
+		String sql = "select payment_no,payment_name,payment_time from pc_payment limit 0,3";
 		preparedstatement = connection.prepareStatement(sql);
 		resultset = preparedstatement.executeQuery();
 		
