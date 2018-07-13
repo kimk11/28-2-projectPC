@@ -14,11 +14,11 @@
 	String userId = (String)session.getAttribute("sessionId");
 	String userName = (String)session.getAttribute("sessionName");
 
-	int check=0;
-	if(request.getParameter("check")!=null){
-		check=Integer.parseInt(request.getParameter("check"));
+	int seatCheck=0;
+	if(request.getParameter("seatCheck")!=null){
+		seatCheck=Integer.parseInt(request.getParameter("seatCheck"));
 	}
-	if(check==0){
+	if(seatCheck==0){
 		//세션이 없을경우, 즉 로그인을 안햇을 경우
 		//로그인 폼 화면
 		//세션이 있을경우, 즉 로그인을 했을 경우
@@ -58,11 +58,10 @@
 	}else{
 %>
 <!-- 	include로 로그인 후 화면  -->
+
 	<jsp:include page="../browser/loginBorwser.jsp">
 		<jsp:param name="userId" value="<%=userId%>"/>
 	</jsp:include>
-	
-	<a href="<%= request.getContextPath() %>/seat/seatLogout.jsp">로그아웃</a>
 <%	
 	}
 %>

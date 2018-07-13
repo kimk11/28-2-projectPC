@@ -26,21 +26,21 @@
 		%>
 		<script type="text/javascript">
 			alert('로그인에 실패했습니다. 다시 로그인 해주세요');
-			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp';
+			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp?seatNo=<%=seatNo%>';
 		</script>
 		<%
 	}else if(1 == check){
 		%>
 		<script type="text/javascript">
 			alert('아이디가 틀렸습니다.');
-			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp';
+			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp?seatNo=<%=seatNo%>';
 		</script>
 		<%
 	}else if(2 == check){
 		%>
 		<script type="text/javascript">
 			alert('비밀번호가 틀렸습니다.');
-			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp';
+			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp?seatNo=<%=seatNo%>';
 		</script>
 		<%
 	}else if(3 == check){
@@ -51,7 +51,7 @@
 
 		%>
 		<script type="text/javascript">
-			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp?check=1';
+			location.href='<%=request.getContextPath()%>/seat/seatLogin.jsp?seatCheck=1';
 		</script>
 		<%
 	}

@@ -11,10 +11,10 @@
 </head>
 <body>
 	<div id="wrapper">
-	
 		<div id="topright">
 <!-- 		회원정보 -->
 			<div id="topInfo">
+
 				<jsp:include page="../browser/loginUserInfo2.jsp"></jsp:include>
 			</div>
 		</div>

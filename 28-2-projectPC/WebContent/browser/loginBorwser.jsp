@@ -26,5 +26,8 @@
 			</div>
 		</div>
 	</div>
+	<a href="<%= request.getContextPath() %>/seat/seatLogout.jsp">로그아웃</a>
+	<a href="<%= request.getContextPath() %>/index.jsp">홈으로 가기</a>
+	<a href="<%= request.getContextPath() %>/PCseatChoice.jsp">좌석 선택으로 가기</a>
 </body>
 </html>
