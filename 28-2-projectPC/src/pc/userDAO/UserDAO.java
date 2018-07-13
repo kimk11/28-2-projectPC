@@ -331,4 +331,61 @@ public class UserDAO {
 		
 		return check;
 	}
+	
+	//아이디 비밀번호 세션 저장값 가져오기
+	public UserDTO seatLoginSession(UserDTO userDto) throws ClassNotFoundException, SQLException {
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		
+		String sql = "SELECT user_id,user_pw,user_level,user_name,user_time,user_date,user_point,seat_no FROM pc_user WHERE user_id=? AND user_pw=?";
+		preparedstatement = connection.prepareStatement(sql);
+		preparedstatement.setString(1, userDto.getUserId());
+		preparedstatement.setString(2, userDto.getUserPw());
+		result = preparedstatement.executeQuery();
+		if(result.next()) {
+			userDto.setUserLevel(result.getString(3));
+			userDto.setUserName(result.getString(4));
+			userDto.setUserTime(result.getInt(5));
+			userDto.setUserDate(result.getString(6));
+			userDto.setUserPoint(result.getInt(7));
+			userDto.setSeatNo(result.getInt(8));
+		}
+		
+		result.close();
+		preparedstatement.close();
+		connection.close();
+		
+		return userDto;
+	}
+	
+	//아이디 비밀번호 확인
+	public int userLoginCheck(UserDTO userDto) throws ClassNotFoundException, SQLException {
+		Driver driver = new Driver();
+		connection = driver.driverConnection();
+		int check = 0;
+		
+		String sql = "select user_pw from pc_user where user_id = ?";
+		preparedstatement = connection.prepareStatement(sql);
+		preparedstatement.setString(1, userDto.getUserId());
+		result = preparedstatement.executeQuery();
+		if(result.next()) {
+			if(result.getString(1).equals(userDto.getUserPw())) {
+				check = 3;
+			}else {
+				check = 2;
+			}
+		}else {
+			check = 1;
+		}
+		
+		result.close();
+		preparedstatement.close();
+		connection.close();
+		
+		return check;
+		// 리턴값이 0이면 db연결 실패
+		// 1이면 아이디 불일치
+		// 2이면 비밀번호 불일치
+		// 3이면 로그인 성공
+	}
 }

@@ -16,7 +16,7 @@
 		var managerBtn = document.getElementById("managerBtn");
 		var userBtn = document.getElementById("userBtn");
 		managerBtn.addEventListener("click", function() {
-			location.href='#';
+			location.href='./user/userLogin.jsp';
 		});
 		userBtn.addEventListener("click", function() {
 			location.href='./payNseat.jsp';
