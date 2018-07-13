@@ -28,7 +28,7 @@
 	<div>
 		<section class="container">
 		    <article class="half">
-		        <h1>projectPC</h1>
+		        <h1>결제 로그인</h1>
 		        <div class="tabs">
 			            <span class="tab signin active"><a href="#signin">Login</a></span>
 		        </div>
