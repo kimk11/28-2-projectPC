@@ -43,7 +43,7 @@ public class GoodsDAO {
 	
 	
 	// 03-1 상품 조회 후 수정 SelectforUpdate
-	public GoodsDTO SelectforUpdate(int code) throws ClassNotFoundException, SQLException {
+	public GoodsDTO selectForUpdate(int code) throws ClassNotFoundException, SQLException {
 		System.out.println("03 updateGoods <GoodsDAO>");
 		GoodsDTO goodsDto = new GoodsDTO();
 		Driver db = new Driver();
@@ -73,17 +73,15 @@ public class GoodsDAO {
 		Driver db = new Driver();
 		connection = db.driverConnection();
 		System.out.println("connection : " + connection);
-		String sql = "UPDATE pc_goods SET goods_name=?,goods_price=?,goods_cate=? WHERE goods_code=?";
+		String sql = "UPDATE pc_goods SET goods_name=?, goods_price=?, goods_cate=? WHERE goods_code=?";
 		preparedstatement = connection.prepareStatement(sql);
 		preparedstatement.setString(1, goods.getGoodsName());
 		preparedstatement.setInt(2, goods.getGoodsPrice());
 		preparedstatement.setString(3, goods.getGoodsCate());
 		preparedstatement.setInt(4, goods.getGoodsCode());
+		
 		preparedstatement.executeUpdate();
-		System.out.println("code:" + goods.getGoodsCode());
-		System.out.println("Name:" + goods.getGoodsName());
-		System.out.println("Price:" + goods.getGoodsPrice());
-		System.out.println("Cate:" + goods.getGoodsCate());
+
 		preparedstatement.close();
 		connection.close();
 	}
@@ -158,6 +156,11 @@ public class GoodsDAO {
 			preparedstatement.setInt(2, pagePerRow);
 			// sk가 전체일 때
 		}else if(sk.equals("all") && sv == "") {
+			System.out.println("02조건_sk(전체)이고  sv 공백");
+			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name, goods_price,goods_cate,goods_date FROM pc_goods limit ?,?");
+			preparedstatement.setInt(1,StartPage);
+			preparedstatement.setInt(2,pagePerRow);
+		}else if(sk.equals("all") && sv != "") {
 			System.out.println("02조건_sk(전체)이고  sv 공백");
 			preparedstatement = connection.prepareStatement("SELECT goods_code,goods_name, goods_price,goods_cate,goods_date FROM pc_goods limit ?,?");
 			preparedstatement.setInt(1,StartPage);

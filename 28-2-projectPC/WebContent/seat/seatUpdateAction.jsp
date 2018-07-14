@@ -16,7 +16,7 @@
 		SeatDAO seatDao = new SeatDAO();
 		seatDao.seatUpdateEnd(userId);
 		
-		response.sendRedirect(request.getContextPath() + "/seat/seatList.jsp");
+		response.sendRedirect(request.getContextPath() + "/managerAllSearch.jsp");
 	%>
 </body>
 </html>

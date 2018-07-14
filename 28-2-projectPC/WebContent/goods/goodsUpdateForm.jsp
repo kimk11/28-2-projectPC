@@ -16,7 +16,7 @@ request.setCharacterEncoding("euc-kr");
 int code = Integer.parseInt(request.getParameter("code"));
 System.out.println(code);
 GoodsDAO goodsDao = new GoodsDAO();
-GoodsDTO goodsDto = goodsDao.SelectforUpdate(code);
+GoodsDTO goodsDto = goodsDao.selectForUpdate(code);
 
 %>
 		<h1>상품 정보 수정</h1>
@@ -24,7 +24,7 @@ GoodsDTO goodsDto = goodsDao.SelectforUpdate(code);
 			<table border = "1">
 				<tr>
 					<td>상품코드</td>
-					<td><input type = "text" name = goodsCode value = "<%=code%>" readonly></td>
+					<td><input type = "text" name = goodsCode value = "<%=goodsDto.getGoodsCode()%>" readonly></td>
 				</tr>
 				<tr>
 					<td>상품명</td>

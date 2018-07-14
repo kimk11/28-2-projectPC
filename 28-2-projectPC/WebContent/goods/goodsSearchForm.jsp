@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action = "<%=request.getContextPath()%>/goods/goodsSearchList.jsp" method = "post">
+	<form action = "<%=request.getContextPath()%>/managerAllSearch.jsp" method = "post">
+		<input type = "hidden" name = "search" value = "상품검색">
 		<select name="sk">
 			<option value="all">전체</option>
 			<optgroup label="-------"></optgroup>

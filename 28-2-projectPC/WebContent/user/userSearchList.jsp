@@ -87,7 +87,7 @@
 	<%
 		if (currentPage > 1) {
 	%>
-		<a href="../AllSearch/AllSearchList.jsp?currentPage=<%=currentPage - 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">◀ 이전</a>
+		<a href="./managerAllSearch.jsp?currentPage=<%=currentPage - 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">◀ 이전</a>
 	<%
 		}
 		int lastPage = rowNumber / rowPerPage;
@@ -96,7 +96,7 @@
 		}
 		if (currentPage < lastPage){
 	%>
-		<a href="../AllSearch/AllSearchList.jsp?currentPage=<%=currentPage + 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">다음 ▶</a>
+		<a href="./managerAllSearch.jsp?currentPage=<%=currentPage + 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">다음 ▶</a>
 	<%
 		}
 	%>

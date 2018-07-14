@@ -18,11 +18,11 @@
 	var home = document.getElementById('home');
 	
 	goods.addEventListener('click', function() {
-		location.href='<%=request.getContextPath()%>/AllSearch/AllSearchList.jsp?search=상품검색';
+		location.href='<%=request.getContextPath()%>/managerAllSearch.jsp?search=상품검색';
 	});
 	
 	user.addEventListener('click', function() {
-		location.href='<%=request.getContextPath()%>/AllSearch/AllSearchList.jsp?search=회원검색';
+		location.href='<%=request.getContextPath()%>/managerAllSearch.jsp?search=회원검색';
 	});
 	
 

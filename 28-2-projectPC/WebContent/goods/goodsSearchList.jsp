@@ -93,7 +93,7 @@ table {
 		if (currentPage > 1) {
 	%>
 	<a
-		href="../goods/goodsSearchList.jsp?currentPage=<%=currentPage - 1%>&sk=<%=sk%>&sv=<%=sv%>&search=상품검색">이전</a>
+		href="./managerAllSearch.jsp?currentPage=<%=currentPage - 1%>&sk=<%=sk%>&sv=<%=sv%>&search=상품검색">이전</a>
 	<%
 		}
 
@@ -105,7 +105,7 @@ table {
 	%>
 
 	<a
-		href="../goods/goodsSearchList.jsp?currentPage=<%=currentPage + 1%>&sk=<%=sk%>&sv=<%=sv%>&search=상품검색">다음</a>
+		href="./managerAllSearch.jsp?currentPage=<%=currentPage + 1%>&sk=<%=sk%>&sv=<%=sv%>&search=상품검색">다음</a>
 	<%
 		}
 	%>

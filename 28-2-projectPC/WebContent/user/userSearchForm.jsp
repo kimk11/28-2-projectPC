@@ -6,7 +6,7 @@
 		<title>userSearchForm</title>
 	</head>
 	<body>
-		<form action = "<%=request.getContextPath()%>/user/userSearchList.jsp" method = "post">
+		<form action = "<%=request.getContextPath()%>/managerAllSearch.jsp" method = "post">
 			<select name = "searchKey">
 				<option value = "userAll">전체</option>
 				<option value = "userId">회원아이디</option>

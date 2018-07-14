@@ -9,7 +9,7 @@
 <%
 request.setCharacterEncoding("euc-kr");
 %>
-		<%@ include file="../AllSearch/AllSearch.jsp" %><br><br>
+		<%@ include file="../allSearch/allSearch.jsp" %><br><br>
 <%
 String search = request.getParameter("search");
 if(request.getParameter("search")==null){

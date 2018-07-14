@@ -9,7 +9,7 @@
 <body>
 	<div>
 <%-- 		<jsp:include page="../AllSearch/AllSearchList.jsp"></jsp:include> --%>
-		<%@ include file="../AllSearch/AllSearchList.jsp"%>
+		<%@ include file="../allSearch/allSearchList.jsp"%>
 	</div>
 	
 	<div>

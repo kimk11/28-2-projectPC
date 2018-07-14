@@ -216,6 +216,10 @@ public class UserDAO {
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, begin);
 			preparedstatement.setInt(2, rowPerPage);
+		}else if(searchKey.equals("userAll") && searchValue != null || (searchKey.equals("userAll") && !searchValue.equals(""))) {
+			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
+			preparedstatement.setInt(1, begin);
+			preparedstatement.setInt(2, rowPerPage);
 		}else if(searchKey.equals("userId") && searchValue == "") {
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, 0);
