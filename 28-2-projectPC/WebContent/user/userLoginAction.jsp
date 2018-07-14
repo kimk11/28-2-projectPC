@@ -48,6 +48,13 @@
 		session.setAttribute("sessionLevel", userDto.getUserLevel());
 		
 		response.sendRedirect(request.getContextPath()+"/user/userLogin.jsp");
+	}else if(4 == check){
+		%>
+		<script type="text/javascript">
+ 		alert('접근 권한이 없습니다. 다시 로그인 해주세요');
+ 		location.href='<%=request.getContextPath()%>/user/userLogin.jsp'; 
+ 		</script>
+ 		<%
 	}
 
 %>

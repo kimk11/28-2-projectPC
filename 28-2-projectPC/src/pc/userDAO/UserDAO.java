@@ -364,13 +364,15 @@ public class UserDAO {
 		connection = driver.driverConnection();
 		int check = 0;
 		
-		String sql = "select user_pw from pc_user where user_id = ?";
+		String sql = "select user_pw, user_level from pc_user where user_id = ?";
 		preparedstatement = connection.prepareStatement(sql);
 		preparedstatement.setString(1, userDto.getUserId());
 		result = preparedstatement.executeQuery();
 		if(result.next()) {
-			if(result.getString(1).equals(userDto.getUserPw())) {
+			if((result.getString(1).equals(userDto.getUserPw())) && (result.getString(2).equals("관리자"))) {
 				check = 3;
+			}else if((result.getString(1).equals(userDto.getUserPw())) && (result.getString(2).equals("일반회원"))){
+				check = 4;
 			}else {
 				check = 2;
 			}
