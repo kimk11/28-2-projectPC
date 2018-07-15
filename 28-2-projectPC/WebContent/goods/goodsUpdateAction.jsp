@@ -5,10 +5,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <% request.setCharacterEncoding("euc-kr"); %>
 <!DOCTYPE html>
-<jsp:useBean id="g" class="pc.DTO.GoodsDTO"></jsp:useBean> 
+<jsp:useBean id="goodsDto" class="pc.DTO.GoodsDTO"></jsp:useBean> 
 <!-- import 역활 패키지 member클래스 및 멤버 클래스 통해 선언 생성 호출 -->
-<jsp:setProperty property="*" name="g"/> <!-- * 입력 개수만큼 호출  -->
+<jsp:setProperty name="goodsDto" property="*"/> <!-- * 입력 개수만큼 호출  -->
 <!-- 프로퍼티명 = 전역변수명  -->
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -17,7 +18,7 @@
 <body>
 <%
 	GoodsDAO goodsDao = new GoodsDAO();
-	goodsDao.updateGoods(g);
+	goodsDao.updateGoods(goodsDto);
 
 	response.sendRedirect(request.getContextPath()+"/managerAllSearch.jsp");
 %>

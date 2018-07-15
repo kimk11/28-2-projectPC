@@ -42,14 +42,14 @@ public class GoodsDAO {
 	}
 	
 	
-	// 03-1 상품 조회 후 수정 SelectforUpdate
+	// 03-1 상품 조회 후 수정 selectForUpdate
 	public GoodsDTO selectForUpdate(int code) throws ClassNotFoundException, SQLException {
 		System.out.println("03 updateGoods <GoodsDAO>");
 		GoodsDTO goodsDto = new GoodsDTO();
 		Driver db = new Driver();
 		connection = db.driverConnection();
 		System.out.println("connection : " + connection);
-		String sql = "SELECT goods_code,goods_name,goods_price,goods_cate,goods_date FROM pc_goods WHERE goods_code=?;";
+		String sql = "SELECT goods_code, goods_name, goods_price, goods_cate, goods_date FROM pc_goods WHERE goods_code=?;";
 		preparedstatement = connection.prepareStatement(sql);
 		preparedstatement.setInt(1, code);
 		resultSet = preparedstatement.executeQuery();
