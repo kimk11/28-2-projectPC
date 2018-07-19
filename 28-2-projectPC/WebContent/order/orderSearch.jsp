@@ -31,15 +31,15 @@
 	});
 	
 	goods2.addEventListener('click', function() {
-		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods2';
+		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods4';
 	});
 	
 	goods3.addEventListener('click', function() {
-		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods3';
+		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods2';
 	});
 	
 	goods4.addEventListener('click', function() {
-		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods4';
+		location.href='<%= request.getContextPath() %>/browser/loginBrowserOrder.jsp?sk=goods3';
 	});
 </script>
 	
