@@ -22,6 +22,7 @@ CREATE TABLE `pc_user` (
 COLLATE='euckr_korean_ci'
 ENGINE=InnoDB;
 
+
 // user table insert data
 
 INSERT INTO `pc_user` (`user_id`, `user_pw`, `user_level`, `user_name`, `user_time`, `user_date`, `user_point`, `seat_no`) VALUES
@@ -30,7 +31,7 @@ INSERT INTO `pc_user` (`user_id`, `user_pw`, `user_level`, `user_name`, `user_ti
 	('id003', 'pw003', '일반회원', '송유빈', 0, '2018-07-08 19:33:55', 0, 0),
 	('id004', 'pw004', '일반회원', '김호순', 0, '2018-07-08 19:34:11', 0, 0),
 	('id005', 'pw005', '일반회원', '이응빈', 0, '2018-07-08 19:34:26', 0, 0),
-	('id006', 'pw006', '일반회원', '박원우', 0, '2018-07-08 19:34:35', 0, 0);
+	('id006', 'pw006', '관리자', '박원우', 0, '2018-07-08 19:34:35', 0, 0);
 
 
 
@@ -76,7 +77,7 @@ CREATE TABLE `pc_payment` (
 	`payment_time` INT(10) NOT NULL,
 	PRIMARY KEY (`payment_no`)
 )
-COLLATE='euckr_Korean_ci'
+COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB;
 
 //pay table insert data
@@ -94,10 +95,10 @@ INSERT INTO `pc_payment` (`payment_no`, `payment_name`, `payment_time`) VALUES
 	//seat table	
 
 CREATE TABLE `pc_seat` (
-	`seat_no` INT(10) NOT NULL,
-	`user_id` VARCHAR(50) NULL DEFAULT '없음',
-	`user_name` VARCHAR(50) NULL DEFAULT '없음',
-	`user_time` INT(11) NULL DEFAULT '0',
+	`seat_no` INT(10) NOT NULL AUTO_INCREMENT,
+	`user_id` VARCHAR(50) NOT NULL DEFAULT '0',
+	`user_name` VARCHAR(50) NOT NULL DEFAULT '0',
+	`user_time` INT NOT NULL DEFAULT '0',
 	PRIMARY KEY (`seat_no`)
 )
 COLLATE='euckr_korean_ci'
@@ -126,11 +127,11 @@ INSERT INTO `pc_seat` (`seat_no`, `user_id`, `user_name`, `user_time`) VALUES
 
 CREATE TABLE `pc_order` (
 	`order_code` INT(10) NOT NULL AUTO_INCREMENT,
+	`goods_name` VARCHAR(50) NOT NULL,
 	`user_id` VARCHAR(50) NOT NULL,
 	`goods_code` INT(10) NOT NULL,
 	`seat_no` INT(10) NOT NULL,
 	`goods_price` INT(10) NOT NULL,
-	`goods_name` VARCHAR(50) NOT NULL,
 	PRIMARY KEY (`order_code`)
 )
 COLLATE='euckr_korean_ci'
