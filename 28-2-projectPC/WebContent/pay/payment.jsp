@@ -36,6 +36,12 @@ body {
 		top :6px;
 		z-index: 5;
 	}
+	  #btnJoin{
+		  width : 100px;
+		  position:relative;
+	 	  left :50px;
+		  top :6px;
+  }
 	#info {
 		margin-bottom: 30px;
 		position: relative;
@@ -192,6 +198,7 @@ body {
   top : 120px;
  
   }
+
  
 </style>
 </head>
@@ -217,6 +224,7 @@ body {
 	if(userId == null) {
 	%>
 	<button type="button" id="btnLog" class ="btn btn-5">Login</button>
+	<button type="button" id="btnJoin" class ="btn btn-5">Join</button>
 	<%
 	}else {
 	%>
@@ -258,10 +266,13 @@ body {
 		 </div>
 	<script>
 	var btnLog = document.getElementById("btnLog");
+	var btnJoin = document.getElementById("btnJoin");
 	btnLog.addEventListener("click", function() {
 		location.href ="./payLogin.jsp";
 	});
-	
+	btnJoin.addEventListener("click", function() {
+		location.href ="./payUserInsertForm.jsp";
+	});
 	
 	</script>
 

@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/form.css" />
 	</head>
 	<body>
-		<form action="<%=request.getContextPath()%>/user/userInsertAction.jsp" method="post">
+		<form action="<%=request.getContextPath()%>/pay/payUserInsertAction.jsp" method="post">
 				<h2>PC방 회원가입</h2>
 				<div class="group">
 					<input type="text"  name="userId" size="10px" placeholder="ID"> 
