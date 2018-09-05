@@ -10,6 +10,7 @@ public class Driver {
 	public Connection driverConnection() throws ClassNotFoundException, SQLException {
 		String className = "org.mariadb.jdbc.Driver";
 		String jdbcDriver = "jdbc:mysql://kjw4968.cafe24.com:3306/kjw4968?useUnicode=true&characterEncoding=euckr";
+//		String jdbcDriver = "jdbc:mysql://localhost:3306/kjw4968?useUnicode=true&characterEncoding=euckr";
 		String dbUser = "kjw4968";
 		String dbPass = "adsw0530!@";
 		

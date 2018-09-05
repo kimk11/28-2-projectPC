@@ -18,7 +18,7 @@
 
 	
 	<body>
-	<%@ include file="../user/userSearchForm.jsp" %><br><br>
+<%-- 	<%@ include file="../user/userSearchForm.jsp" %><br><br> --%>
 	<%
 	System.out.println("user/userSearchList.jsp");
 	%>
@@ -96,7 +96,7 @@
 	<%
 		if (currentPage > 1) {
 	%>
-		<a href="<%= request.getContextPath() %>/managerAllSearch.jsp?currentPage=<%=currentPage - 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">◀ 이전</a>
+		<a href="<%= request.getContextPath() %>/managerAllSearch.jsp?currentPage=<%=currentPage - 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=2">◀ 이전</a>
 	<%
 		}
 		int lastPage = rowNumber / rowPerPage;
@@ -105,7 +105,7 @@
 		}
 		if (currentPage < lastPage){
 	%>
-		<a href="<%= request.getContextPath() %>/managerAllSearch.jsp?currentPage=<%=currentPage + 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">다음 ▶</a>
+		<a href="<%= request.getContextPath() %>/managerAllSearch.jsp?currentPage=<%=currentPage + 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=2">다음 ▶</a>
 	<%
 		}
 	%>

@@ -28,13 +28,13 @@ if(search=="" || search ==null){
 	
 	<%
 	
-}else if(search.equals("상품검색")){
+}else if(search.equals("1")){
 	%>
 	
 	<%@ include file="../goods/goodsSearchList.jsp"%>
 	
 	<%
-}else if(search.equals("회원검색")){
+}else if(search.equals("2")){
 	%>
 	
 	<%@ include file="../user/userSearchList.jsp"%>

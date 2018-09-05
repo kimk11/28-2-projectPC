@@ -23,7 +23,7 @@ table {
 </style>
 </head>
 <%-- 	<%@ include file="../AllSearch/AllSearch.jsp" %><br><br> --%>
-	<%@ include file = "../goods/goodsSearchForm.jsp"%><br><br>
+<%-- 	<%@ include file = "../goods/goodsSearchForm.jsp"%><br><br> --%>
 
 <body>
 	<%
@@ -93,7 +93,7 @@ table {
 		if (currentPage > 1) {
 	%>
 	<a
-		href="./managerAllSearch.jsp?currentPage=<%=currentPage - 1%>&sk=<%=sk%>&sv=<%=sv%>&search=상품검색">이전</a>
+		href="./managerAllSearch.jsp?currentPage=<%=currentPage - 1%>&sk=<%=sk%>&sv=<%=sv%>&search=1">이전</a>
 	<%
 		}
 
@@ -105,7 +105,7 @@ table {
 	%>
 
 	<a
-		href="./managerAllSearch.jsp?currentPage=<%=currentPage + 1%>&sk=<%=sk%>&sv=<%=sv%>&search=상품검색">다음</a>
+		href="./managerAllSearch.jsp?currentPage=<%=currentPage + 1%>&sk=<%=sk%>&sv=<%=sv%>&search=1">다음</a>
 	<%
 		}
 	%>
