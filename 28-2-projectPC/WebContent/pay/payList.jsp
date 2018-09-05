@@ -108,7 +108,7 @@
 			<tr>
 				<td>
 					<div class="paybox">
-						<div class="price1"><%= payDto.getPaymentName() + "¿ø"%></div>
+						<div class="price1"><%= payDto.getPaymentName()%></div>
 						<div class="price2">
 						<%
 							if(time<60){
@@ -162,7 +162,7 @@
 			<tr>
 				<td>
 					<div class="paybox">
-						<div class="price1"><%= payDto.getPaymentName() + "¿ø"%></div>
+						<div class="price1"><%= payDto.getPaymentName()%></div>
 						<div class="price2">
 						<%
 							if(time<60){

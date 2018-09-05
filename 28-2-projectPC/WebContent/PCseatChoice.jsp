@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/pcseatChoice.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <style type="text/css">
 table {
@@ -396,13 +398,28 @@ table {
 								<div class="seatNo"><%= seatNo %></div>
 								<div class="black_x">x</div>
 						<%
-							}
+							}	
 						%>
 					</div>
 				</td>	
 			</tr>
 		</table>
-	</div>
 
+		<button type="button" id="homeBtn" class="btn">»®</button>
+		<button type="button" id="backBtn" class="btn">¿Ã¿¸</button>
+	</div>
+	
+ 	<script type="text/javascript"> 
+	 	var homeBtn = document.getElementById('homeBtn');
+		var backBtn = document.getElementById('backBtn');	
+		
+		homeBtn.addEventListener('click', function() {
+			location.href='<%=request.getContextPath()%>/index.jsp';
+		});
+		backBtn.addEventListener('click', function() {
+			history.go(-1);
+		});
+ 	</script>
+	
 </body>
 </html>
