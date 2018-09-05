@@ -15,6 +15,10 @@
 <%
 	String userId = (String)session.getAttribute("sessionId");
 	String userName = (String)session.getAttribute("sessionName");
+	String check = "non";
+	if(request.getParameter("check")!=null){
+		check = request.getParameter("check");
+	}
 
 	
 		//세션이 없을경우, 즉 로그인을 안햇을 경우
@@ -22,7 +26,7 @@
 		//세션이 있을경우, 즉 로그인을 했을 경우
 		//로그인 한 회정 정보 화면
 
-	if(userId == null){
+	if(!check.equals("ok")){
 %>
 	
 	<div>
@@ -55,7 +59,7 @@
 <%	
 	}else{
 		
-		response.sendRedirect(request.getContextPath() +"./payment.jsp");
+		response.sendRedirect(request.getContextPath() +"./payment.jsp?check=ok");
 	}
 %>
 	

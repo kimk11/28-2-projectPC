@@ -28,7 +28,7 @@ time += addTime;
 
 payDao.payAddTime(time, userId);
 
-response.sendRedirect(request.getContextPath()+"/pay/payment.jsp");
+response.sendRedirect(request.getContextPath()+"/pay/payment.jsp?check=1");
 %>
 
 

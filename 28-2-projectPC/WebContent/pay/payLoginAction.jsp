@@ -46,10 +46,11 @@
 		userDto = seatDao.seatLoginSession(userDto);
 		session.setAttribute("sessionId", userDto.getUserId());
 		session.setAttribute("sessionName", userDto.getUserName());
-
+		request.setAttribute("check", "ok");
+		
 		%>
 		<script type="text/javascript">
-			location.href='<%=request.getContextPath()%>/pay/payment.jsp';
+			location.href='<%=request.getContextPath()%>/pay/payment.jsp?check=1';
 		</script>
 		<%
 	}

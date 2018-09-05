@@ -203,7 +203,19 @@ body {
 </style>
 </head>
 <body>
+	<%
 
+	String check = "non";
+	if(request.getParameter("check")!=null){
+		check = request.getParameter("check");
+	}
+	
+	System.out.println();
+	System.out.println(request.getParameter("check") +"<<<<<<check request paylist");
+	System.out.println(check +"<<<<<<check paylist");
+	System.out.println();
+	
+	%>
 
 	<div class="button">
 	    <div class="compass"></div>
@@ -216,12 +228,12 @@ body {
 	<%
 	/* PayDAO payDao = new PayDAO(); */
 	UserDTO userDto = new UserDTO();
-
+	
 	%>
 	
 	<div>
 	<%
-	if(userId == null) {
+	if(!check.equals("1")) {
 	%>
 	<button type="button" id="btnLog" class ="btn btn-5">Login</button>
 	<button type="button" id="btnJoin" class ="btn btn-5">Join</button>

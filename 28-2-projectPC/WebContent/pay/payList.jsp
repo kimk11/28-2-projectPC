@@ -80,6 +80,12 @@
 <%	
 	String userId = (String)session.getAttribute("sessionId");
 	String userName = (String)session.getAttribute("sessionName");
+	
+	System.out.println("paylist");
+	System.out.println(request.getParameter("check") +"<<<<<<check request paylist");
+	System.out.println(check +"<<<<<<check paylist");
+	System.out.println();
+	
 	System.out.println(userId+"<--userId");
 	System.out.println(userName+"<--userName");
 	PayDAO payDao = new PayDAO();
@@ -118,7 +124,7 @@
 				</td>
 		
 				<%
- 				if(userId == null) {
+ 				if(!check.equals("1")) {
 					
  				}else{
  				%>
@@ -172,7 +178,7 @@
 				</td>
 		
 				<%
- 				if(userId == null) {
+ 				if(!check.equals("1")) {
 					
  				}else{
  				%>

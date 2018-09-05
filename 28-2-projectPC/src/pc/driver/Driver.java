@@ -8,10 +8,10 @@ public class Driver {
 	private Connection connection = null;
 	
 	public Connection driverConnection() throws ClassNotFoundException, SQLException {
-		String className = "com.mysql.jdbc.Driver";
-		String jdbcDriver = "jdbc:mysql://localhost:3306/pcdb?useUnicode=true&characterEncoding=euckr";
-		String dbUser = "pcid";
-		String dbPass = "pcpw";
+		String className = "org.mariadb.jdbc.Driver";
+		String jdbcDriver = "jdbc:mysql://kjw4968.cafe24.com:3306/kjw4968?useUnicode=true&characterEncoding=euckr";
+		String dbUser = "kjw4968";
+		String dbPass = "adsw0530!@";
 		
 		Class.forName(className);
 		connection = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
