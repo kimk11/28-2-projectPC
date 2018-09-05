@@ -200,44 +200,50 @@ public class UserDAO {
 	
 	//회원정보를 검색하는 메서드
 	public ArrayList<UserDTO> userSelectSearch(String searchKey, String searchValue, int begin, int rowPerPage) throws ClassNotFoundException, SQLException{
-		System.out.println("07_01_userSelectSearch UserDAO.java");
+
 		
 		ArrayList<UserDTO> list = new ArrayList<>();
 		
 		Driver driver = new Driver();
-		connection = driver.driverConnection();
-		System.out.println(connection + "<-- connection");		
+		connection = driver.driverConnection();	
 		
 		if((searchKey == null && searchValue == null) || (searchKey.equals("") && searchValue.equals(""))){
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, begin);
 			preparedstatement.setInt(2, rowPerPage);
+			System.out.println(1);
 		}else if(searchKey.equals("userAll") && searchValue == null || (searchKey.equals("userAll") && searchValue.equals(""))) {
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, begin);
 			preparedstatement.setInt(2, rowPerPage);
+			System.out.println(2);
 		}else if(searchKey.equals("userAll") && searchValue != null || (searchKey.equals("userAll") && !searchValue.equals(""))) {
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, begin);
 			preparedstatement.setInt(2, rowPerPage);
+			System.out.println(3);
 		}else if(searchKey.equals("userId") && searchValue == "") {
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, 0);
 			preparedstatement.setInt(2, 0);
+			System.out.println(4);
 		}else if(searchKey.equals("userName") && searchValue == "") {
 			preparedstatement = connection.prepareStatement("SELECT user_id, user_pw, user_level, user_name, user_time, user_date, user_point, seat_no FROM pc_user ORDER BY user_id ASC LIMIT ?, ?");
 			preparedstatement.setInt(1, 0);
 			preparedstatement.setInt(2, 0);
+			System.out.println(5);
 		}else if(searchKey.equals("userId")&& searchValue != null) {
 			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_id = ?");
 			//preparedstatement.setInt(1, begin);
 			//preparedstatement.setInt(2, rowPerPage);
 			preparedstatement.setString(1, searchValue);
+			System.out.println(6);
 		}else if(searchKey.equals("userName")&& searchValue != null) {
 			preparedstatement = connection.prepareStatement("SELECT * FROM pc_user WHERE user_Name = ?");
 			//preparedstatement.setInt(1, begin);
 			//preparedstatement.setInt(2, rowPerPage);
 			preparedstatement.setString(1, searchValue);
+			System.out.println(7);
 		}
 		
 		result = preparedstatement.executeQuery();
@@ -264,13 +270,13 @@ public class UserDAO {
 	
 	//pc_user 테이블에 검색한 회원정보의 총 행의 갯수를 알려주는 메서드
 	public int userCountSearch(String searchKey, String searchValue) throws ClassNotFoundException, SQLException {
-		System.out.println("07_02_userCountSearch UserDAO.java");
+		
 
 		int rowNumber = 0;
 		
 		Driver driver = new Driver();
 		connection = driver.driverConnection();
-		System.out.println(connection + "<-- connection");		
+				
 		
 		if(searchKey == null && searchValue == null || searchKey.equals("") && searchKey.equals("")) {
 			preparedstatement = connection.prepareStatement("SELECT count(*) AS count FROM pc_user");

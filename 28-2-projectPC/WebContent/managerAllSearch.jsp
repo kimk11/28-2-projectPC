@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+		System.out.println("m amll search .jsp");
+	%>
 	<div>
 <%-- 		<jsp:include page="../AllSearch/AllSearchList.jsp"></jsp:include> --%>
 		<%@ include file="../allSearch/allSearchList.jsp"%>

@@ -7,27 +7,38 @@
 </head>
 <body>
 <%
+System.out.println("allSearch/allSearchList.jsp");
 request.setCharacterEncoding("euc-kr");
 %>
 		<%@ include file="../allSearch/allSearch.jsp" %><br><br>
 <%
 String search = request.getParameter("search");
+
+System.out.println(search+"<<<<<<search");
+System.out.println(request.getParameter("search")+"request search");
+
 if(request.getParameter("search")==null){
 	search="";
 }
 
-if(search==""){
+if(search=="" || search ==null){
 	%>
-<%@ include file="../user/userSearchList.jsp"%>
+	
+	<%@ include file="../user/userSearchList.jsp"%>
+	
 	<%
 	
 }else if(search.equals("상품검색")){
 	%>
+	
 	<%@ include file="../goods/goodsSearchList.jsp"%>
+	
 	<%
 }else if(search.equals("회원검색")){
 	%>
+	
 	<%@ include file="../user/userSearchList.jsp"%>
+	
 	<%
 }
 %>

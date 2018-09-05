@@ -16,8 +16,12 @@
 		
 	</head>
 
-	<%@ include file="../user/userSearchForm.jsp" %><br><br>
+	
 	<body>
+	<%@ include file="../user/userSearchForm.jsp" %><br><br>
+	<%
+	System.out.println("user/userSearchList.jsp");
+	%>
 		<table border ="1">
 			<tr>
 				<td>회원아이디</td>
@@ -63,6 +67,11 @@
 			}
 			
 		
+			System.out.println(searchKey);
+			System.out.println(searchValue);
+			System.out.println(begin);
+			System.out.println(rowPerPage);
+		
 		ArrayList<UserDTO> list = userDao.userSelectSearch(searchKey, searchValue, begin, rowPerPage);
 		
 		for(int i = 0; i < list.size(); i++){
@@ -87,7 +96,7 @@
 	<%
 		if (currentPage > 1) {
 	%>
-		<a href="./managerAllSearch.jsp?currentPage=<%=currentPage - 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">◀ 이전</a>
+		<a href="<%= request.getContextPath() %>/managerAllSearch.jsp?currentPage=<%=currentPage - 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">◀ 이전</a>
 	<%
 		}
 		int lastPage = rowNumber / rowPerPage;
@@ -96,7 +105,7 @@
 		}
 		if (currentPage < lastPage){
 	%>
-		<a href="./managerAllSearch.jsp?currentPage=<%=currentPage + 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">다음 ▶</a>
+		<a href="<%= request.getContextPath() %>/managerAllSearch.jsp?currentPage=<%=currentPage + 1%>&searchKey=<%=searchKey%>&searchValue=<%=searchValue%>&search=회원검색">다음 ▶</a>
 	<%
 		}
 	%>

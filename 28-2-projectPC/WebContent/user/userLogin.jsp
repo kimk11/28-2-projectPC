@@ -44,6 +44,8 @@
 		</div>
 	<%
 		}else if(userLevel.equals("관리자")){
+			System.out.println("userlogin");
+			System.out.println(userLevel+"<<<<<<<<<레벨");
 	%>
 		<jsp:include page="../managerAllSearch.jsp">
 			<jsp:param name="userId" value="<%=userId%>"/>
