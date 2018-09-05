@@ -13,11 +13,11 @@
 </head>
 <body>
 	<div>
-		<table>
+		<table class="cf clearfix">
 			<tr>
 				<td>
 				
-					<div class="seatbox clearfix">
+					<div class="seatbox">
 						<%
 							int seatNo=1;
 							SeatDAO seatDao = new SeatDAO();
@@ -410,10 +410,30 @@
 							}
 						%>
 					</div>
+					
 				</td>	
 			</tr>
+			<tr>
+				<td>
+					<button type="button" id="backBtn" class="btn">¿Ã¿¸</button>
+					<button type="button" id="homeBtn" class="btn">»®</button>
+				</td>
+			</tr>
 		</table>
+		
 	</div>
+
+	<script type="text/javascript"> 
+	 	var homeBtn = document.getElementById('homeBtn');
+		var backBtn = document.getElementById('backBtn');	
+		
+		homeBtn.addEventListener('click', function() {
+			location.href='<%=request.getContextPath()%>/index.jsp';
+		});
+		backBtn.addEventListener('click', function() {
+			history.go(-1);
+		});
+ 	</script>
 
 </body>
 </html>
